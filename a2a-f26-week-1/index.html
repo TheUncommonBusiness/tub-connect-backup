@@ -1,0 +1,2006 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A2A F26 | Week #1: Think Like an AI Architect: Build Your First AI Employees Workshop</title>
+<meta name="description" content="A2A Fall 2026 class notes: build AI employee skills, master memory, plan projects, automate follow-up emails.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="A2A F26 | Week #1: Think Like an AI Architect: Build Your First AI Employees Workshop">
+<meta property="og:description" content="A2A Fall 2026 · Week 1 class notes">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>">
+<style>
+:root{
+  --text:rgb(55,53,47);--muted:rgba(55,53,47,.65);--faint:rgba(55,53,47,.45);--bg:#fff;--divider:rgba(55,53,47,.16);
+  --code-bg:rgb(247,246,243);--hover:rgba(55,53,47,.06);--link-ul:rgba(55,53,47,.4);--inline-code:#EB5757;--inline-code-bg:rgba(135,131,120,.15);
+  --c-gray:#787774;--c-brown:#9F6B53;--c-orange:#D9730D;--c-yellow:#CB912F;--c-green:#448361;--c-blue:#337EA9;--c-purple:#9065B0;--c-pink:#C14C8A;--c-red:#D44C47;
+  --bg-gray:#F1F1EF;--bg-brown:#F4EEEE;--bg-orange:#FBECDD;--bg-yellow:#FBF3DB;--bg-green:#EDF3EC;--bg-blue:#E7F3F8;--bg-purple:#F4F0F7;--bg-pink:#F9EEF3;--bg-red:#FDEBEC;
+  --check:#2383E2;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --text:rgba(255,255,255,.81);--muted:rgba(255,255,255,.55);--faint:rgba(255,255,255,.35);--bg:#191919;--divider:rgba(255,255,255,.094);
+  --code-bg:#202020;--hover:rgba(255,255,255,.055);--link-ul:rgba(255,255,255,.35);--inline-code:#FF7369;--inline-code-bg:rgba(255,255,255,.07);
+  --c-gray:#9B9B9B;--c-brown:#BA856F;--c-orange:#C77D48;--c-yellow:#CA9849;--c-green:#529E72;--c-blue:#5E87C9;--c-purple:#9D68D3;--c-pink:#D15796;--c-red:#DF5452;
+  --bg-gray:#2F2F2F;--bg-brown:#4A3228;--bg-orange:#5C3B23;--bg-yellow:#56452F;--bg-green:#243D30;--bg-blue:#143A4E;--bg-purple:#3C2D49;--bg-pink:#4E2C3C;--bg-red:#522E2A;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI Variable Display","Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";font-size:16px;line-height:1.5;-webkit-font-smoothing:auto}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--link-ul);text-underline-offset:2px;word-break:break-word}
+a:hover{text-decoration-color:currentColor}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;height:45px;padding:0 12px;background:var(--bg);border-bottom:1px solid transparent;font-size:14px}
+.topbar.scrolled{border-bottom-color:var(--divider)}
+.crumb{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:2px 6px}
+.tb-btn{flex:none;font:inherit;font-size:14px;color:var(--text);background:none;border:0;border-radius:4px;padding:4px 8px;cursor:pointer}
+.tb-btn:hover{background:var(--hover)}
+.page{max-width:900px;margin:0 auto;padding:0 96px 30vh}
+.page-icon{font-size:78px;line-height:1.1;margin-top:72px;height:86px}
+.page-title{font-size:40px;font-weight:700;line-height:1.2;margin:8px 0 20px;padding:3px 2px;letter-spacing:-.01em}
+.block{margin:1px 0;padding:3px 2px;min-height:1.5em;white-space:pre-wrap;word-break:break-word}
+p.block{margin:1px 0}
+.empty{min-height:1.5em}
+.h{font-weight:600;line-height:1.3;padding:3px 2px;margin-bottom:1px}
+.h1{font-size:1.875em;margin-top:1.6em}
+.h2{font-size:1.5em;margin-top:1.3em}
+.h3{font-size:1.25em;margin-top:1em}
+.h4{font-size:1.1em;margin-top:.8em}
+hr{border:0;border-top:1px solid var(--divider);margin:12px 2px}
+details>summary{list-style:none;display:flex;align-items:flex-start;cursor:pointer;padding:3px 2px;border-radius:4px}
+details>summary::-webkit-details-marker{display:none}
+details>summary:hover{background:var(--hover)}
+details>summary:focus-visible{outline:2px solid var(--check);outline-offset:1px}
+.tri{flex:0 0 24px;height:1.5em;display:flex;align-items:center;justify-content:center;margin-left:-4px}
+.tri::before{content:"";border-style:solid;border-width:5px 0 5px 8.5px;border-color:transparent transparent transparent currentColor;transition:transform .15s ease;transform-origin:35% 50%}
+details[open]>summary>.tri::before{transform:rotate(90deg)}
+summary .h{margin:0;padding:0;font-size:inherit}
+.t-text{flex:1;min-width:0;word-break:break-word}
+.toggle{margin:1px 0}
+.th1{margin-top:1.6em}.th1>summary{font-size:1.875em;font-weight:600;line-height:1.3}
+.th2{margin-top:1.3em}.th2>summary{font-size:1.5em;font-weight:600;line-height:1.3}
+.th3{margin-top:1em}.th3>summary{font-size:1.25em;font-weight:600;line-height:1.3}
+.th4{margin-top:.8em}.th4>summary{font-size:1.1em;font-weight:600;line-height:1.3}
+.th1>summary>.tri,.th2>summary>.tri,.th3>summary>.tri,.th4>summary>.tri{height:1.3em;flex-basis:1.05em;min-width:24px}
+.th1>summary>.tri::before{border-width:7px 0 7px 12px}
+.th2>summary>.tri::before{border-width:6px 0 6px 10.5px}
+.th3>summary>.tri::before,.th4>summary>.tri::before{border-width:5.5px 0 5.5px 9.5px}
+.toggle-body{padding-left:26px}
+.toggle-body>:first-child{margin-top:2px}
+.callout{display:flex;gap:8px;padding:16px 16px 16px 12px;border-radius:6px;margin:4px 0;width:100%}
+.callout.plain{border:1px solid var(--divider)}
+.callout-icon{flex:none;width:24px;height:24px;font-size:20px;line-height:24px;text-align:center;margin-top:1px}
+.callout-body{flex:1;min-width:0}
+.callout-body>:first-child,.callout-body>:first-child>summary{margin-top:0}
+.callout-body>:first-child.h{margin-top:0}
+.list{margin:1px 0;padding-left:1.7em}
+.list li{padding:3px 0 3px 2px}
+.list li::marker{font-family:inherit}
+ul.list{list-style:disc}ul.list ul.list{list-style:circle}ul.list ul.list ul.list{list-style:square}
+ol.list{list-style:decimal}ol.list ol.list{list-style:lower-alpha}ol.list ol.list ol.list{list-style:lower-roman}
+.li-text{word-break:break-word;white-space:pre-wrap}
+.li-text:empty{display:none}
+.todo{display:flex;align-items:flex-start;padding:3px 2px;margin:1px 0}
+.box{flex:none;width:16px;height:16px;margin:4px 8px 0 2px;border:1.5px solid currentColor;border-radius:2px;opacity:.85}
+.todo.checked .box{background:var(--check);border-color:var(--check);opacity:1;position:relative}
+.todo.checked .box::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.todo.checked .todo-text{text-decoration:line-through;color:var(--faint)}
+.todo-text{flex:1;min-width:0;word-break:break-word}
+.code{background:var(--code-bg);border-radius:6px;margin:4px 0}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:8px 10px 0 16px}
+.code-lang{font-size:12px;color:var(--muted)}
+.copy{font:inherit;font-size:12px;color:var(--muted);background:var(--bg);border:1px solid var(--divider);border-radius:4px;padding:2px 10px;cursor:pointer}
+.copy:hover{color:var(--text)}
+.copy.done{color:var(--c-green);border-color:var(--c-green)}
+pre{margin:0;padding:8px 20px 22px 18px;overflow:auto}
+pre code{font-family:"SFMono-Regular",Menlo,Consolas,"PT Mono","Liberation Mono",Courier,monospace;font-size:85%;line-height:1.55;white-space:pre-wrap;word-break:break-word;tab-size:2;background:none;color:inherit;padding:0}
+code{font-family:"SFMono-Regular",Menlo,Consolas,"PT Mono","Liberation Mono",Courier,monospace;font-size:85%;color:var(--inline-code);background:var(--inline-code-bg);border-radius:4px;padding:.2em .4em}
+.image{margin:6px 0;padding:3px 2px}
+.image img{display:block;max-width:100%;height:auto;margin:0 auto;border-radius:2px;background:var(--hover)}
+.zoom{cursor:zoom-in}
+.bookmark{display:flex;align-items:center;gap:12px;border:1px solid var(--divider);border-radius:6px;padding:12px 14px;margin:4px 0;text-decoration:none;color:inherit}
+.bookmark:hover{background:var(--hover)}
+.bm-text{flex:1;min-width:0}
+.bm-title{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bm-url,.bm-host{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bm-host{flex:none}
+.file{display:inline-flex;align-items:center;gap:6px;padding:4px 6px;margin:2px 0;border-radius:4px;text-decoration:none}
+.file:hover{background:var(--hover)}
+.file-name{text-decoration:underline;text-decoration-color:var(--link-ul)}
+.file-size{font-size:12px;color:var(--muted)}
+.mention{font-weight:500;text-decoration:none;border-bottom:1px solid var(--link-ul)}
+.embed{margin:6px 0;padding:3px 2px}
+.embed-frame{height:680px;border:1px solid var(--divider);border-radius:6px;overflow:hidden;background:var(--bg)}
+.embed-frame iframe{width:100%;height:100%;border:0;display:block}
+.embed figcaption{font-size:14px;color:var(--muted)}
+.embed figcaption .block{min-height:0}
+u{text-decoration:underline}
+.c-gray{color:var(--c-gray)}.c-brown{color:var(--c-brown)}.c-orange{color:var(--c-orange)}.c-yellow{color:var(--c-yellow)}.c-green{color:var(--c-green)}.c-blue{color:var(--c-blue)}.c-purple{color:var(--c-purple)}.c-pink{color:var(--c-pink)}.c-red{color:var(--c-red)}
+.bg-gray{background:var(--bg-gray)}.bg-brown{background:var(--bg-brown)}.bg-orange{background:var(--bg-orange)}.bg-yellow{background:var(--bg-yellow)}.bg-green{background:var(--bg-green)}.bg-blue{background:var(--bg-blue)}.bg-purple{background:var(--bg-purple)}.bg-pink{background:var(--bg-pink)}.bg-red{background:var(--bg-red)}
+span[class^="bg-"]{border-radius:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+p.block[class*="bg-"]{border-radius:4px;padding:3px 6px}
+.foot{margin-top:72px;padding-top:14px;border-top:1px solid var(--divider);font-size:13px;color:var(--muted)}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(15,15,15,.82);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;background:#fff}
+@media (max-width:900px){.page{padding:0 24px 30vh}}
+@media (max-width:560px){
+  .page{padding:0 16px 30vh}.page-icon{font-size:56px;height:64px;margin-top:36px}.page-title{font-size:30px}
+  .th1>summary,.h1{font-size:1.55em}.th2>summary,.h2{font-size:1.3em}.th3>summary,.h3{font-size:1.15em}
+  .toggle-body{padding-left:14px}.callout{padding:12px 10px 12px 8px}.list{padding-left:1.4em}pre{padding:8px 12px 16px}
+  .embed-frame{height:620px}
+}
+@media print{.topbar,.copy{display:none}.page{padding:0}}
+</style>
+</head>
+<body>
+<header class="topbar" id="top">
+  <div class="crumb">🌲 A2A F26 | Week #1: Think Like an AI Architect: Build Your First AI Employees Workshop</div>
+  <button class="tb-btn" id="expand" type="button">Expand all</button>
+</header>
+<main class="page">
+  <div class="page-icon" aria-hidden="true">🌲</div>
+  <h1 class="page-title">A2A F26 | Week #1: Think Like an AI Architect: Build Your First AI Employees Workshop</h1>
+<h2 class="h h1" id="think-like-an-ai-architect-build-your-first-ai-employees">Think Like an AI Architect: Build Your First AI Employees</h2>
+<details class="toggle th1" id="welcome-to-a2a"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">👋 Welcome to A2A!</h2></summary><div class="toggle-body"><h4 class="h h3" id="youre-here"><strong>You're here!</strong></h4>
+<p class="block">That alone puts you in the top 1% of AI Experts GLOBALLY. 🔥🔥🔥</p>
+<p class="block ">And you are in great company with hundreds of others from across the world!</p>
+<h3 class="h h2" id="our-mission-in-a2a">Our Mission in A2A</h3>
+<p class="block "><strong>Become AI Architects — </strong>Spot and solve problems in your business with AI.</p></div></details>
+<hr>
+<details class="toggle th1" id="this-weeks-goals"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🎯 This week's goals</h2></summary><div class="toggle-body"><figure class="image"><a href="assets/4067d895-e4aaada97b03.webp" class="zoom"><img src="assets/4067d895-e4aaada97b03.webp" width="1600" height="686" loading="lazy" decoding="async" alt="This weeks goals editorial"></a></figure>
+<h2 class="h h1" id="by-the-end-of-this-week-you-will"><em>🧠 By the end of this week you will….</em></h2>
+<h3 class="h h2" id="①-safely-set-up-your-ai-account-of-choice">① Safely Set Up Your AI Account of Choice</h3>
+<h3 class="h h2" id="②-build-manage-world-class-skills">② Build &amp; Manage WORLD-CLASS Skills</h3>
+<h3 class="h h2" id="③-set-up-ai-projects">③ Set Up AI Projects</h3>
+<h3 class="h h2" id="④-understand-upgrade-your-ai-memory-system">④ Understand &amp; Upgrade Your AI Memory System</h3></div></details>
+<hr>
+<details class="toggle th1" id="todays-agenda"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🗓 Today's Agenda</h2></summary><div class="toggle-body"><p class="block">📒 <strong>Today's class notes on TUB Connect:</strong> <a href="https://tubconnect.com/p/afba0514-a2d8-474c-859c-a817c78ce728" target="_blank" rel="noopener">A2A F26 | Week #1: Think Like an AI Architect</a></p>
+<ol class="list"><li><div class="li-text">Housekeeping, settings check + the AI Employee Ladder</div></li><li><div class="li-text">Skills: what they are, and build your first one (meeting follow-up email)</div></li><li><div class="li-text">The secrets of world-class skills + the Skill Scorecard (“AI Employee Quality Analyzer”)</div></li><li><div class="li-text">☕ Break + Zoom Q&amp;A opens</div></li><li><div class="li-text">Projects: build your Executive Assistant together</div></li><li><div class="li-text">Memory + where your AI's brain lives</div></li><li><div class="li-text">Homework, pre-work + top 3 questions</div></li></ol>
+<p class="block empty">&nbsp;</p></div></details>
+<hr>
+<details class="toggle th1" id="housekeeping"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🧹 Housekeeping</h2></summary><div class="toggle-body"><div class="callout bg-green"><div class="callout-icon">📌</div><div class="callout-body"><h3 class="h h2" id="tubconnecthttptubconnectcom"><a href="http://tubconnect.com/" target="_blank" rel="noopener">TubConnect</a></h3>
+<figure class="image"><a href="assets/4067d895-dfd000ddbfe0.webp" class="zoom"><img src="assets/4067d895-dfd000ddbfe0.webp" width="1600" height="847" loading="lazy" decoding="async" alt=""></a></figure>
+<figure class="image"><a href="assets/4067d895-df1e1afdec17.webp" class="zoom"><img src="assets/4067d895-df1e1afdec17.webp" width="1600" height="809" loading="lazy" decoding="async" alt=""></a></figure></div></div>
+<details class="toggle th2" id="our-journey-to-your-ai-powered-business"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">📍 Our Journey to your AI-Powered Business</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/4067d895-fe24042a7cac.webp" class="zoom"><img src="assets/4067d895-fe24042a7cac.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></figure>
+<details class="toggle th2" id="a2a-bonus-schedule"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🎁 A2A Bonus Schedule</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/4067d895-e0b0672e06de.webp" class="zoom"><img src="assets/4067d895-e0b0672e06de.webp" width="1600" height="2400" loading="lazy" decoding="async" alt="Bonus sessions list"></a></figure></div></details></div></details>
+<details class="toggle th2" id="how-to-get-support"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">💬 How to Get Support</h3></summary><div class="toggle-body"><details class="toggle th2" id="①-tub-connect-your-main-hub"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">① 🏆 TUB Connect (YOUR MAIN HUB!!!!)</h3></summary><div class="toggle-body"><p class="block ">PIN your TUBCONNECT to your homepage.</p>
+<p class="block "><a href="http://TUBConnect.com" target="_blank" rel="noopener">TUBConnect.com</a></p></div></details>
+<details class="toggle th2" id="②-calchat"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">② 🏅CalChat</h3></summary><div class="toggle-body"><p class="block ">✋ <strong>You have a question? </strong>ASK CalCHAT.</p>
+<a class="bookmark" href="https://chatgpt.com/g/g-6aafa56f53188191bf7eaae0e505b8b3-calchat-fall-2026" target="_blank" rel="noopener"><div class="bm-text"><div class="bm-title">CalChat Fall 2026 · ChatGPT</div><div class="bm-url">https://chatgpt.com/g/g-6aafa56f53188191bf7eaae0e505b8b3-calchat-fall-2026</div></div><div class="bm-host">chatgpt.com</div></a></div></details>
+<details class="toggle th2" id="③-slack-your-ai-advisors"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">③ 🥉 Slack &amp; Your AI Advisors</h3></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Post your wins</div></li><li><div class="li-text">Ask your questions</div></li></ul>
+<div class="callout plain"><div class="callout-icon">📣</div><div class="callout-body"><p class="block"><strong>Announcement: </strong>The HIPAA channel will be created after Week 2, before Week 3, after AI basics are covered.</p></div></div></div></details>
+<details class="toggle th2" id="④-thursday-office-hours-for-anything-still-stuck"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">④ Thursday office hours for anything still stuck</h3></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text">We will answer your pre-submitted questions in breakout rooms.</div></li><li class=""><div class="li-text">Every breakout room is recorded too.</div></li></ul>
+<div class="callout plain"><div class="callout-icon">❓</div><div class="callout-body"><p class="block"><strong>Please pre-submit questions from </strong><a href="https://tally.so/r/vGEAv4" target="_blank" rel="noopener"><strong>this link. </strong></a></p></div></div></div></details>
+<details class="toggle th2" id="⑤-zoom-qa-opens-at-the-session-break"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">⑤ Zoom Q&amp;A opens at the session break</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/4057d895-c704d3ab81ec.webp" class="zoom"><img src="assets/4057d895-c704d3ab81ec.webp" width="1600" height="534" loading="lazy" decoding="async" alt=""></a></figure>
+<details class="toggle th3" id="until-then-stay-with-us"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Until then, stay with us.</h4></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text">Most questions will be answered throughout the session.</div></li><li class=""><div class="li-text">At the break, drop yours in the Zoom Q&amp;A.</div></li><li class=""><div class="li-text">We will answer the top 3 live at the end.</div></li></ul></div></details>
+<details class="toggle th3" id="not-every-question-gets-answered-in-class"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Not every question gets answered in class.</h4></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text">CalChat and the Slack community have your back.</div></li></ul></div></details></div></details>
+<details class="toggle th2" id="⑥-email-us"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">⑥ Email Us</h3></summary><div class="toggle-body"><p class="block ">Billing or account questions — Email: <a href="mailto:support@theuncommonbusiness.co" target="_blank" rel="noopener">support@theuncommonbusiness.co</a></p></div></details></div></details>
+<details class="toggle th2" id="everything-is-recorded"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🎥 Everything is RECORDED</h3></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">The replay is in <span class="bg-yellow">TUBConnect</span> <strong>within 24 hours.</strong></div></li><li><div class="li-text">Playbook videos run at <strong>1.2x by default</strong>. You can change the speed on the video player.</div></li><li><div class="li-text">We'd love you to build WITH us. If it gets overwhelming, just watch live and build later from the replay.</div></li><li><div class="li-text">Homework and next steps come with every session.</div></li></ul></div></details>
+<details class="toggle th2" id="what-your-week-looks-like"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🗓️ What your week looks like</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/4047d895-ed0b99fc9684.webp" class="zoom"><img src="assets/4047d895-ed0b99fc9684.webp" width="1600" height="566" loading="lazy" decoding="async" alt=""></a></figure></div></details>
+<details class="toggle th2" id="tools-you-will-need-to-be-successful"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🛠️Tools You Will Need to Be Successful</h3></summary><div class="toggle-body"><ol class="list"><li><div class="li-text">AI tool of Choice (Claude, ChatGPT or Co-Pilot for Compliance)</div><p class="block ">Claude Pro and/or ChatGPT Pro (With the desktop app)</p>
+<p class="block "><a href="https://claude.com/download" target="_blank" rel="noopener">Download Claude Desktop App</a> · <a href="https://chatgpt.com/download" target="_blank" rel="noopener">Download ChatGPT Desktop App</a></p></li><li><div class="li-text">A meeting recorder — <a href="https://go.granola.ai/the-uncommon-business" target="_blank" rel="noopener">Granola</a> is our Go-To</div></li><li><div class="li-text"><a href="https://ref.wisprflow.ai/the-uncommon-business-8sra" target="_blank" rel="noopener">WisprFlow</a> — Talk &gt; Type</div></li><li><div class="li-text">A second monitor — <a href="https://www.amazon.com/Amazon-Basics-23-8-inch-Computer-Compatible/dp/B0DZ54SVWG/ref=sr_1_1_ffob_sspa?crid=C65GD4KDNNXB&amp;dib=eyJ2IjoiMSJ9.0UBtmgnL41vQKOsGLcZDwHOH-U2OTmA83XwL3pRqf4HxP5K7-aFbCVucU9ojCTto8fJN8QzLfQYJKuVoWHrKcQv7EVMLFOIzBJSvQAqKmUjVcsZkITiSPsO9mjxPTpTZqM0MpoGrigRjYwPUy6AuV-kwj0gbRzML2LyMnT-7abdPyG_lqjYONnicodGr5RhfoFbDedfTgzAcvhIB2hfV9iY0uDUwYMI8i9OkaGzZKBc.-PJgtDaKycT83ML98n6S6tqLjcgxPREOJC6MjQoWIi8&amp;dib_tag=se&amp;keywords=external+monitor&amp;qid=1793066851&amp;sprefix=exteranl+modit%2Caps%2C238&amp;sr=8-1-spons&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&amp;psc=1" target="_blank" rel="noopener">Like this — $84</a></div></li></ol></div></details>
+<details class="toggle th2" id="feeling-overwhelmed"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🫣 Feeling overwhelmed?</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/4047d895-fc8f1010e20d.webp" class="zoom"><img src="assets/4047d895-fc8f1010e20d.webp" width="1600" height="582" loading="lazy" decoding="async" alt=""></a></figure>
+<details class="toggle th2" id="things-to-remember"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Things to remember…</h3></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text">A little overwhelm is completely normal and expected!</div></li><li class=""><div class="li-text">Be gentle with yourself if you are not fully done with Week 0!</div></li><li class=""><div class="li-text">Recordings are your friend, go at your own speed!</div></li><li class=""><div class="li-text">Foundations are EVERYTHING! Make sure you watch the Foundations videos in TUB Connect!</div></li></ul>
+<p class="block"><strong>Already an AI Expert? </strong>Lean in — You always learn something new, even if this feels like a review. This is the FOUNDATION of everything we build over the next 8 weeks.</p></div></details></div></details>
+<details class="toggle th2" id="the-wins-in-slack-are-insane"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🏆 The wins in Slack are insane</h3></summary><div class="toggle-body"><p class="block"><strong><u>ARE YOU IN SLACK!?!?!?</u></strong></p>
+<figure class="image"><a href="assets/4067d895-e06428308ef5.webp" class="zoom"><img src="assets/4067d895-e06428308ef5.webp" width="1600" height="850" loading="lazy" decoding="async" alt=""></a></figure>
+<p class="block empty">&nbsp;</p>
+<details class="toggle th2" id="if-you-are-not-in-slack"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">if you are not in slack…</h3></summary><div class="toggle-body"><ol class="list"><li class=""><div class="li-text">Go to your email</div></li><li class=""><div class="li-text">Search: "invited you to work with them in The Uncommon Community as a guest”</div></li><li class=""><div class="li-text">Then go to your junk…</div></li><li class=""><div class="li-text">Search “SLACK”</div></li><li class=""><div class="li-text">You should have an email</div></li></ol></div></details></div></details></div></details>
+<hr>
+<details class="toggle th1" id="settings-check-lets-do-this-together"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">⚙️ Settings Check: Let's do this together</h2></summary><div class="toggle-body"><details class="toggle th2" id="①-make-sure-you-have-a-paid-claude-andor-chatgpt-account"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">① Make Sure you Have a PAID Claude and/or ChatGPT Account</h3></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Claude will be our focus through this program but you can use whatever you want</div></li><li><div class="li-text"><strong>Have a team?!</strong> - GET A TEAM ACCOUNT (Sharing your projects &amp; work is KEY to success</div></li></ul></div></details>
+<details class="toggle th2" id="②-turn-off-model-training"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">② Turn off model training</h3></summary><div class="toggle-body"><p class="block ">We don’t want all our work going to these platforms.</p>
+<p class="block">Keep your data &amp; usage to YOURSELF.</p>
+<details class="toggle th2" id="what-type-of-account-do-you-have"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">What type of account do you have?</h3></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text"></div><p class="block"><strong>Claude Pro or Max SINGLE PERSON:</strong></p>
+<ul class="list"><li class=""><div class="li-text">profile icon (bottom left) → <strong>Settings</strong> → <strong>Privacy</strong> → turn <strong>Help improve our AI models</strong> OFF.</div></li></ul></li><li class=""><div class="li-text"></div><p class="block"><strong>Claude Team or Enterprise:</strong> nothing to do. <strong>Anthropic doesn't train on Team or Enterprise data, so you won't see this switch.</strong></p></li></ul>
+<p class="block empty">&nbsp;</p>
+<ul class="list"><li class=""><div class="li-text"></div><p class="block"><strong>ChatGPT Plus or Pro SINGLE PERSON:</strong></p>
+<ul class="list"><li><div class="li-text">profile icon → <strong>Settings</strong> → <strong>Data controls</strong> → turn <strong>Improve the model for everyone</strong> OFF.</div></li></ul></li><li class=""><div class="li-text"></div><p class="block"><strong>ChatGPT Business or Enterprise:</strong> nothing to do. It's off by default.</p></li></ul></div></details>
+<p class="block"><a href="https://www.youtube.com/watch?v=atgJmoeKXCA&amp;list=PLOzactdCY7GQ&amp;index=5" target="_blank" rel="noopener">[TUTORIAL ON TUB CONNECT]</a></p></div></details>
+<details class="toggle th2" id="③-turn-on-code-execution-and-file-creation-this-powers-skill"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">③ Turn on code execution and file creation (this powers skills AND artifacts)</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/4057d895-fd4acc472db2.webp" class="zoom"><img src="assets/4057d895-fd4acc472db2.webp" width="1600" height="667" loading="lazy" decoding="async" alt=""></a></figure>
+<p class="block">Most skills end in a file, like a doc, a deck or a spreadsheet. This switch lets Claude make them, and it turns on artifacts too.</p>
+<ul class="list"><li class=""><div class="li-text"></div><p class="block"><strong>Claude Pro or Max:</strong> profile icon → <strong>Settings</strong> → <strong>Capabilities</strong> → turn on <strong>Code execution and file creation</strong>. (Newer screens call it <strong>Create and edit files</strong>.)</p></li><li class=""><div class="li-text"></div><p class="block"><strong>Claude Team:</strong> already on. Only your account owner can change it, in <strong>Organization settings</strong> → <strong>Capabilities</strong>.</p></li><li class=""><div class="li-text"></div><p class="block"><strong>Claude Enterprise:</strong> your admin turns it on in <strong>Organization settings</strong> → <strong>Capabilities</strong>.</p></li><li class=""><div class="li-text"></div><p class="block"><strong>ChatGPT:</strong> nothing to turn on. It makes files right in the chat.</p></li></ul></div></details></div></details>
+<hr>
+<details class="toggle th1" id="the-ai-employee-ladder-lets-review"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🪜 The AI Employee Ladder: Let’s Review</h2></summary><div class="toggle-body"><p class="block ">We will move up the AI employee ladder today, one rung at a time.</p>
+<figure class="image"><a href="assets/4047d895-d1783a1bae55.webp" class="zoom"><img src="assets/4047d895-d1783a1bae55.webp" width="1600" height="955" loading="lazy" decoding="async" alt=""></a></figure>
+<ol class="list"><li class=""><div class="li-text"></div><p class="block"><strong>Contractor</strong> = skills. One task, done the same way every time.</p></li><li class=""><div class="li-text"></div><p class="block"><strong>Trained</strong> = + context. It knows your business.</p></li><li class=""><div class="li-text"></div><p class="block"><strong>Connected</strong> = + connectors to your other tools.</p></li><li class=""><div class="li-text"></div><p class="block"><strong>Autonomous</strong> = + scheduled tasks. It works while you're not there.</p></li></ol>
+<hr></div></details>
+<hr>
+<details class="toggle th1" id="what-is-a-skill"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🧩 What is a skill?</h2></summary><div class="toggle-body"><details class="toggle th2" id="a-skill-is-a-recipe-card-you-hand-to-claude"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">A skill is a recipe card you hand to Claude</h3></summary><div class="toggle-body"><p class="block">A restaurant has recipe cards so every dish comes out the same, no matter who's cooking it.</p>
+<figure class="image"><a href="assets/72e211e7-568a361c0478.webp" class="zoom"><img src="assets/72e211e7-568a361c0478.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></figure>
+<p class="block">I tweaked my scallop dish 10 times and finally <strong>NAILED IT</strong>. Perfect sauce, perfect sear, perfect sides.</p>
+<details class="toggle" id="then-i-wrote-the-recipe-down"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Then I wrote the recipe down.</strong></span></summary><div class="toggle-body"><p class="block"><em><strong>Once.</strong></em> Then I saved it.</p>
+<p class="block">The recipe card lives in the kitchen. Anybody who can read <em>can make scallops the way you make them.</em></p></div></details></div></details>
+<details class="toggle th2" id="every-new-skill-starts-as-a-superhuman-prompt"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Every NEW skill starts as a Superhuman Prompt</h3></summary><div class="toggle-body"><details class="toggle th3" id="role-who-is-claude-on-this-job"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><u>R</u>ole. Who is Claude on this job.</h4></summary><div class="toggle-body"><p class="block"><em>"You are my brand's voice editor. You've studied 100 of my emails."</em></p></div></details>
+<details class="toggle th3" id="context-what-claude-needs-to-know"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><u>C</u>ontext. What Claude needs to know.</h4></summary><div class="toggle-body"><p class="block"><em>"My voice rules: short sentences, no jargon, lead with the conclusion. My audience: female founders, 35 to 55, running $500K to $5M businesses."</em></p></div></details>
+<details class="toggle th3" id="request-the-actual-ask"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><u>R</u>equest. The actual ask.</h4></summary><div class="toggle-body"><p class="block"><em>"Rewrite this draft in my voice. Keep the structure, change the rhythm and word choice."</em></p></div></details>
+<details class="toggle th3" id="question-what-claude-should-ask-you-back"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><u>Q</u>uestion. What Claude should ask you back.</h4></summary><div class="toggle-body"><p class="block"><em>"Before you start, ask me which line in the draft feels least like my voice."</em></p>
+<p class="block"><em>"Please ask me any clarifying questions."</em></p></div></details>
+<hr>
+<h4 class="h h3" id="we-made-it-easy-for-you-superhumanpromptscohttpssuperhumanpr">⚡ We made it easy for you: <a href="https://superhumanprompts.co/" target="_blank" rel="noopener">SuperHumanPrompts.co</a></h4></div></details>
+<details class="toggle th2" id="why-a-skill-beats-a-saved-prompt"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Why a skill beats a saved prompt</h3></summary><div class="toggle-body"><h4 class="h h3" id="a-one-off-prompts-type-it-and-forget-it-today"><span class="bg-gray">A. One-off prompts: Type it and forget it (today)</span></h4>
+<h4 class="h h3" id="b-saved-prompts-repeatable-but-doesnt-scale"><span class="bg-orange">B. Saved prompts: Repeatable but doesn’t scale</span></h4>
+<details class="toggle th3" id="c-turn-it-into-a-skill-what-were-doing-today"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">C. Turn it into a Skill (what we're doing today!)</h4></summary><div class="toggle-body"><p class="block">You stop being the prompt librarian.</p>
+<p class="block">Claude does the work. It improves, and it scales.</p>
+<figure class="image"><a href="assets/4047d895-d35ad793de78.webp" class="zoom"><img src="assets/4047d895-d35ad793de78.webp" width="1600" height="880" loading="lazy" decoding="async" alt=""></a></figure></div></details></div></details>
+<details class="toggle th2" id="build-a-skill-when-all-3-of-these-are-true"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Build a skill when all 3 of these are true</h3></summary><div class="toggle-body"><details class="toggle th3" id="①-it-takes-more-than-a-sentence-to-explain"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">① It takes more than a sentence to explain</h4></summary><div class="toggle-body"><p class="block ">There are rules, structure, and choices baked in.</p>
+<p class="block">The instructions are worth saving because retyping them every time would cost you.</p></div></details>
+<details class="toggle th3" id="②-you-do-it-again-and-again"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">② You do it again and again</h4></summary><div class="toggle-body"><p class="block">You'll run a version of this prompt next week, next month, and next quarter.</p></div></details>
+<details class="toggle th3" id="③-the-output-has-a-right-answer-or-a-set-format"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">③ The output has a right answer or a set format</h4></summary><div class="toggle-body"><p class="block ">You'd know "good" when you saw it.</p>
+<p class="block">You'd notice if it came out wrong.</p></div></details></div></details>
+<details class="toggle th2" id="where-do-you-get-skills"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Where do you get skills?</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/4067d895-e56ebdb3e832.webp" class="zoom"><img src="assets/4067d895-e56ebdb3e832.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Where do you get skills"></a></figure></div></details></div></details>
+<hr>
+<details class="toggle th1" id="lets-practice-turn-a-meeting-transcript-into-a-perfect-follo"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🛠️ Let’s Practice: Turn a Meeting Transcript into a Perfect Follow Up Email</h2></summary><div class="toggle-body"><details class="toggle th2" id="the-situation"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">The situation</h3></summary><div class="toggle-body"><p class="block">You are in a LOT of meetings… and you send 3-5 follow-up emails every day after each meeting.</p>
+<p class="block"><strong>People are waiting for you to send the follow-up with action items, decisions, owners, and deadlines.</strong></p>
+<p class="block ">You are VERY particular with the way follow up emails look &amp; feel.</p></div></details>
+<hr>
+<details class="toggle th2" id="start-with-a-great-prompt"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Start with a great prompt.</h3></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Analyzes a meeting transcript and writes a PERFECT follow-up email for you.</div></li><li><div class="li-text">Auto-detects action items, owners, and deadlines.</div></li></ul>
+<hr>
+<details class="toggle th3" id="brain-dump-your-request-and-get-a-prompt-from-the-superhuman"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Brain dump your request and get a prompt from the Superhuman Prompt Builder</h4></summary><div class="toggle-body"><p class="block">Brain dump your request and get a prompt from the Superhuman Prompt Builder.</p>
+<p class="block ">⚡ We made it easy for you: <a href="https://superhumanprompts.co/" target="_blank" rel="noopener">SuperHumanPrompts.co</a></p>
+<details class="toggle" id="example-brain-dump"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Example brain dump:</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Okay so here is the thing that drives me crazy. I send like three to five follow up emails every single day after meetings, and by the evening I cannot remember who said they would do what. So I sit there for about thirty minutes rebuilding it from my notes, and half the time I am guessing. Everybody is waiting on me for the decisions and who owns what and by when.
+
+What I want is to paste in a transcript and get back the follow up email, written the way I would send it. And I am a little obsessed with my template, it has to look exactly the same every time so my team knows where to look.
+
+So the subject line has the project name and then says decisions, owners, and what I need by Friday. Then "Hi team," and one line that says this is a quick recap so we are all working off the same page. Then what we decided, each decision with one line of context. Then what is still open, so the question, who owns getting us an answer, and by when. Then the action items, each one as the owner, the specific thing they are delivering, and the date. Then what I need from each person this week, just the one thing next to each name. Then the risks I am watching, with the trigger that would make me escalate.
+
+And at the bottom I always say that if anything here does not match your understanding, push back today, because silence means agreement and I will move on it Monday. Then thanks.
+
+A few rules. Same format every time, no extra sections, and do not make it wordy. Plain English, like a sixth grader could read it. If something is unclear, flag it with needs confirmation in brackets. If nobody got named for a task, put owner needed in brackets, please do not guess. If there are no risks, just say none right now. And no long summary of the meeting, I was in the meeting.
+
+Before you start, ask me any clarifying questions you need.</code></pre></div></div></details>
+<details class="toggle" id="rcrq-prompt-output"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>RCRQ Prompt Output: </strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>ROLE: You are David Allen, creator of Getting Things Done and the world's foremost expert on capturing commitments, clarifying ownership, and closing the loop after high-stakes conversations—so nothing falls through the cracks and everyone knows exactly what they own.
+
+CONTEXT: I run [NUMBER] meetings per day and send [NUMBER] follow-up emails every evening. My team depends on my follow-up emails to know what was decided, what they own, and what I need by end of week. I have a strict template I use every time—my team has learned where to look, and I never deviate from it. I will paste a raw meeting transcript below. Your only job is to extract the relevant information and populate my exact template. Do not summarize the meeting. Do not add sections. Do not editorialize. Write at a sixth-grade reading level—short sentences, plain English, no jargon.
+
+REQUEST: Read the transcript I paste and produce one complete follow-up email using this exact structure, in this exact order, with no additions or omissions:
+
+**SUBJECT:** [PROJECT NAME] — Decisions, Owners &amp; What I Need by Friday
+
+Hi team,
+
+Quick recap so we're all working off the same page.
+
+**WHAT WE DECIDED**
+— [Decision]. [One line of context.]
+— [Repeat for each decision.]
+
+**WHAT'S STILL OPEN**
+— Question: [Open question] | Owner: [Name or [OWNER NEEDED]] | Due: [Date or [NEEDS CONFIRMATION]]
+
+**ACTION ITEMS**
+— [Owner] → [Specific deliverable] → [Date]
+
+**WHAT I NEED FROM YOU THIS WEEK**
+— [Name]: [The one thing]
+
+**RISKS I'M WATCHING**
+— [Risk] | Trigger: [What would make me escalate]
+— (If none: "None right now.")
+
+If anything here doesn't match your understanding, push back today. Silence means agreement and I'll move on it Monday.
+
+Thanks,
+[MY NAME]
+
+RULES YOU MUST FOLLOW:
+- Use [NEEDS CONFIRMATION] for anything unclear or ambiguous in the transcript
+- Use [OWNER NEEDED] if no one was named for a task—do not guess
+- Never add sections, headers, or commentary outside this template
+- No long sentences. Plain English only.
+- Do not reference or summarize the meeting itself
+
+QUESTION: Before proceeding, paste your transcript below and I'll return your email ready to send. If you'd like me to ask clarifying questions first, say so now.</code></pre></div></div></details>
+<details class="toggle" id="past-follow-up-emails-i-love"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Past Follow Up Emails I love</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">JavaScript</span><button class="copy" type="button">Copy</button></div><pre><code>SUBJECT: Atlas Insights — Decisions, Owners &amp; What I Need by Friday
+
+Hi team,
+
+Quick recap so we're all working off the same page.
+
+WHAT WE DECIDED
+— Atlas launches as a small pilot, not a full release. We want to find problems with a few customers first.
+— The pilot is capped at 12 customers. Support can't handle more than that yet.
+— We will not share a general release date with customers. We'll set it after the pilot.
+
+WHAT'S STILL OPEN
+— Question: Do pilot customers pay, or is it free? | Owner: Rafael | Due: Thursday, Oct 8
+— Question: Who writes the pilot welcome guide? | Owner: [OWNER NEEDED] | Due: [NEEDS CONFIRMATION]
+
+ACTION ITEMS
+— Elise → List of 15 possible pilot customers → Wednesday, Oct 7
+— Priya → Ask account leads which customers would say yes → Thursday, Oct 8
+— Jonah → Support plan for pilot questions → Friday, Oct 9
+
+WHAT I NEED FROM YOU THIS WEEK
+— Elise: The pilot customer list
+— Priya: Account lead feedback
+— Jonah: The support plan
+— Rafael: The pricing answer
+
+RISKS I'M WATCHING
+— Data imports are still failing in testing | Trigger: Not fixed by Oct 30
+
+If anything here doesn't match your understanding, push back today. Silence means agreement and I'll move on it Monday.
+
+Thanks,
+Maya
+SUBJECT: Q3 Close &amp; Q4 Forecast — Decisions, Owners &amp; What I Need by Friday
+
+Hi team,
+
+Quick recap so we're all working off the same page.
+
+WHAT WE DECIDED
+— Q3 ARR is final at $23.6M. Finance closed the books and the number is locked.
+— Finance owns the forecast from now on. One number, one owner.
+— Deals only count once they're signed. A verbal yes doesn't count.
+
+WHAT'S STILL OPEN
+— Question: Will the cloud vendor give us a credit for the migration overrun? | Owner: Marcus | Due: [NEEDS CONFIRMATION]
+
+ACTION ITEMS
+— Rafael → Base, downside, and upside Q4 forecast → Thursday, Oct 15
+— Priya → Q4 pipeline by deal stage → Wednesday, Oct 14
+— Marcus → Cloud cost breakdown since the migration → Friday, Oct 16
+
+WHAT I NEED FROM YOU THIS WEEK
+— Rafael: The Q4 forecast
+— Priya: The pipeline view
+— Marcus: The cloud cost numbers
+
+RISKS I'M WATCHING
+— Gross margin is below plan | Trigger: Forecast drops under 72%
+— Pipeline coverage is light | Trigger: Falls below 2.5x
+
+If anything here doesn't match your understanding, push back today. Silence means agreement and I'll move on it Monday.
+
+Thanks,
+Maya</code></pre></div></div></details>
+<details class="toggle" id="sample-meeting-transcript"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Sample Meeting Transcript</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code># Acme Co — Q4 Board Meeting Prep
+
+**Meeting date:** Tuesday, October 27, 2026  
+**Time:** 9:00–9:20 a.m. Central  
+**Platform:** Zoom  
+**Duration:** 20 minutes
+
+**Participants:**
+- Maya Chen — CEO
+- Rafael Ortiz — CFO
+- Priya Nair — VP of Sales
+- Jonah Brooks — VP of Customer Success
+- Elise Morgan — VP of Product
+- Marcus Lee — COO
+
+---
+
+## Raw Meeting Transcript
+
+**[00:00] Maya Chen:** Morning, everyone. Can you hear me? Rafael, you're muted. Yep, there we go. Okay, we've got twenty minutes, and I actually have to leave at 9:20. So let's stay focused. The Q4 board meeting is November 12, and the board packet needs to go out Friday, November 6, by five Central. I don't want us building slides the night before again.
+
+**[00:23] Marcus Lee:** That was one time.
+
+**[00:26] Maya:** Marcus, it was literally the last three meetings.
+
+**[00:30] Priya Nair:** I was going to say, I remember at least two.
+
+**[00:34] Marcus:** Okay, fine. Point taken.
+
+**[00:38] Maya:** Here's what I want today. We need to agree on the numbers, the story we're telling, the decisions we want the board to make, and what each of you needs to deliver this week. Rafael, start us off.
+
+**[00:54] Rafael Ortiz:** Yeah. So I've got the preliminary October numbers through yesterday. Just to be clear, October isn't closed. We won't have final actuals until November 3. But the picture is reasonably stable. We finished Q3 at $23.6 million in annual recurring revenue. Our current Q4 exit forecast is $25.4 million in the base case.
+
+**[01:17] Priya:** Hang on. That's lower than the number we discussed yesterday. Sales has us at $25.7 million.
+
+**[01:25] Rafael:** Right, and that's actually one of the things we need to settle. The $25.7 million includes the Northstar Health expansion. That contract hasn't been signed.
+
+**[01:36] Priya:** It's in legal. They're not walking away. I talked to their VP yesterday.
+
+**[01:43] Rafael:** I believe you. But it's a $300,000 annual contract that hasn't been countersigned. I can't put it in committed revenue yet.
+
+**[01:55] Maya:** Okay, so the difference is one contract?
+
+**[01:59] Rafael:** Exactly. Same starting point. Different treatment of Northstar.
+
+**[02:05] Maya:** Initially, I was inclined to use the $25.7 million. But we can't walk into the board meeting with a number we can't defend. Rafael, what are your scenarios?
+
+**[02:18] Rafael:** Base is $25.4 million. Downside is $24.8 million. Upside is $26 million. Those are projected year-end ARR figures, not recognized revenue. I want that labeled clearly on the slide.
+
+**[02:35] Maya:** Agreed. Decision: finance owns the forecast. We use $25.4 million as the base, $24.8 million downside, and $26 million upside. Northstar stays out of the base until it's signed. Priya, I know that's frustrating.
+
+**[02:54] Priya:** No, that's fair. I just don't want the board thinking Sales is sandbagging.
+
+**[03:00] Maya:** Then explain the upside. But don't count a signature we don't have.
+
+**[03:07] Priya:** Fine. I'll get an update from Northstar. They told us legal would finish this week.
+
+**[03:14] Maya:** Can you confirm the signature status by Thursday at noon?
+
+**[03:20] Priya:** Yes, Thursday the 29th, noon Central. I'll send you and Rafael the answer.
+
+**[03:29] Rafael:** Great. And even if it gets signed, let's reconcile the numbers before changing the board deck.
+
+**[03:37] Maya:** Absolutely. Nobody changes the headline number without Rafael signing off.
+
+**[03:46] Marcus:** Sorry, one question. Is that forecast assuming the two open sales roles get filled?
+
+**[03:53] Rafael:** No. It's based on current headcount.
+
+**[03:57] Priya:** Which is part of my concern, but let's get to that.
+
+**[04:03] Maya:** We will. How's the pipeline looking?
+
+**[04:08] Priya:** Mixed. October new bookings are tracking around $720,000 against an $850,000 target. We're at 2.6 times pipeline coverage for Q4, where we really want to be at three times. The good news is deal quality is better than last quarter. The bad news is that three larger deals are moving slower than expected.
+
+**[04:34] Maya:** Which three?
+
+**[04:37] Priya:** Northstar, Westbridge Manufacturing, and Summit Financial. Northstar is paperwork. Westbridge is waiting on their security review. Summit is a budget issue.
+
+**[04:51] Jonah Brooks:** Sorry, is Summit the one that asked for the customer reference?
+
+**[04:55] Priya:** Yeah. We gave them two options on Friday.
+
+**[05:00] Jonah:** Okay. I know one of those customers. I can call them if that's holding things up.
+
+**[05:06] Priya:** Thanks, but I don't think references are the blocker right now. Their CFO froze new software purchases until November.
+
+**[05:15] Maya:** All right. Priya, I don't want just a list of deals. I want to know what we're doing to close the gap. Can you give me a recovery plan for our top ten late-stage opportunities, including the owner, next step, expected close date, and what needs executive help?
+
+**[05:35] Priya:** Yes. Friday at two?
+
+**[05:39] Maya:** Friday, October 30, two Central works. Also, if two of our top five deals slip past December 31, I need to know the same day. Don't save that news for the board deck.
+
+**[05:52] Priya:** Got it.
+
+**[05:56] Maya:** Jonah, let's talk retention. This is the other big issue.
+
+**[06:01] Jonah:** Yeah. And I'm going to be upfront. The renewal number isn't where we want it. We're currently at 91% gross revenue retention for the preliminary October view. Our plan was 94%.
+
+**[06:17] Rafael:** And that's the three-point gap that shows up in the finance bridge.
+
+**[06:22] Jonah:** Right. We've had two notable customer losses. Pinecrest Foods left after a difficult onboarding. Harbor Logistics consolidated vendors during a procurement review. Together they represent about $410,000 in annual contract value.
+
+**[06:41] Maya:** Are we sure Pinecrest was an onboarding issue and not a product issue?
+
+**[06:46] Jonah:** Mostly onboarding. Their first implementation took eleven weeks against a six-week commitment. But there were also some reporting gaps. So, honestly, it's both.
+
+**[06:59] Elise Morgan:** Yeah, I want to jump in there. The reporting gap was real, but it wasn't a missing feature. It was a configuration issue that took us too long to diagnose. That's a shared problem between Product and Customer Success.
+
+**[07:15] Jonah:** Agreed. I don't want us pointing fingers. The customer doesn't care which team owns the issue.
+
+**[07:22] Maya:** Good. We need that attitude in the board materials. I'm not interested in a slide that explains why every problem belongs to someone else.
+
+**[07:34] Rafael:** We could probably bury the churn detail in the appendix and focus on the overall retention trend.
+
+**[07:41] Maya:** No. Actually, that's exactly what I don't want. If we miss retention and hide it, the board will find it in five minutes. Let's lead with it.
+
+**[07:56] Marcus:** Are you saying a full slide on the two losses?
+
+**[08:00] Maya:** One slide on retention. Show the gap, the main causes, and what we're doing over the next thirty days. We should use customer examples, but no customer names without permission.
+
+**[08:16] Jonah:** We may be able to use a quote from Cedarline Systems. Their COO gave us some really good feedback about the onboarding changes. I just don't know whether they've approved us using it externally.
+
+**[08:32] Maya:** Can you check?
+
+**[08:35] Jonah:** Yes. I'll contact their COO and our account lead. I should know by Thursday at four.
+
+**[08:42] Maya:** Good. If we don't have written permission by then, make it anonymous. That's the rule. We don't hold up the packet over a quote.
+
+**[08:56] Jonah:** Makes sense.
+
+**[08:59] Maya:** And what does the thirty-day recovery plan actually look like?
+
+**[09:05] Jonah:** Three pieces. First, we assign executive sponsors to the eight renewal accounts flagged red. Second, we put a tighter handoff between Sales and implementation. Third, we run a weekly review of any onboarding that's more than seven days behind.
+
+**[09:28] Marcus:** On the second point, we already have a handoff checklist.
+
+**[09:32] Jonah:** We have a checklist, yes. But not everyone uses it.
+
+**[09:39] Marcus:** That's fair. We can make it a required step in the workflow.
+
+**[09:45] Maya:** Okay. Decision: we're launching the thirty-day retention recovery sprint. No new headcount for it. Jonah leads the customer work, Marcus fixes the operating handoff, and Elise supports the reporting fixes.
+
+**[10:04] Elise:** That's fine. I just want to be careful about promising every reporting issue will be fixed in thirty days.
+
+**[10:13] Maya:** We're not promising that. We're promising a plan and visible progress.
+
+**[10:19] Jonah:** I can get you the retention slide by Friday at three. It'll include the three main causes, the eight at-risk accounts, the recovery steps, and who owns the outreach.
+
+**[10:33] Maya:** Perfect. One other question: can we show retention by customer cohort? I'm worried the blended rate hides what happens with newer accounts.
+
+**[10:43] Jonah:** Probably. The data exists, but I haven't checked whether the account start dates are clean enough to use. I need to look at it.
+
+**[10:54] Maya:** Okay. Keep that as an open question. Don't put an unverified cohort chart in the deck. Let me know what the data can support.
+
+**[11:05] Rafael:** On a related note, our gross margin is at 72% in the preliminary view, against a 74% plan.
+
+**[11:14] Maya:** That's the next problem. Marcus?
+
+**[11:18] Marcus:** Yeah. Most of that gap is higher cloud infrastructure cost from the migration. We spent about $140,000 more than planned. We have a vendor credit request outstanding, but I don't want to count the credit until they approve it.
+
+**[11:37] Rafael:** Thank you. That's the correct accounting answer.
+
+**[11:41] Marcus:** I knew you'd like that.
+
+**[11:45] Maya:** What's the current status?
+
+**[11:48] Marcus:** Their account team says they'll get back to us by Thursday morning. I'll confirm by Thursday at eleven and send Rafael the result.
+
+**[12:00] Rafael:** And if there's no credit, my margin forecast stays where it is.
+
+**[12:05] Maya:** Right. If the credit isn't approved by Thursday at eleven, Marcus, tell me directly. We shouldn't be suggesting that margin will bounce back based on a verbal promise. And if the updated margin outlook falls below 71.5%, I want an immediate escalation.
+
+**[12:25] Marcus:** Understood.
+
+**[12:28] Priya:** Can we talk about those two sales hires now? Because if we're expecting pipeline coverage to improve—
+
+**[12:36] Maya:** Yes. Go ahead.
+
+**[12:39] Priya:** We have two open SDR roles. I've been interviewing for both. If we pause them, we might save money in Q4, but we'll pay for it in pipeline generation next quarter.
+
+**[12:56] Rafael:** I understand that. But we're below our margin plan, and the forecast assumes current headcount. I don't think it's the right time to add fixed cost.
+
+**[13:09] Priya:** Could we at least fill one?
+
+**[13:13] Marcus:** Maybe, but we're also looking at moving budget from events into retention. We can't do everything at once.
+
+**[13:22] Maya:** Here's where I land. We pause both open SDR hires through December 31 and revisit the decision in the January planning cycle. Priya, we can still build the candidate pipeline, but no offers until the hiring plan is reviewed.
+
+**[13:39] Priya:** Okay. I don't love it, but I understand the constraint.
+
+**[13:45] Maya:** I know. Let's make sure the pipeline recovery plan reflects that we're working with the team we have.
+
+**[13:56] Marcus:** On budget, I've confirmed there's $120,000 available from Q4 field events that we canceled. I think we should move that into customer onboarding and retention.
+
+**[14:09] Rafael:** That is within the current operating plan. We can reallocate it without asking for incremental spending.
+
+**[14:18] Maya:** Let's do it. Decision: reallocate the $120,000 from canceled field events to retention recovery. No net new budget. Marcus, I want a breakdown of where the money goes, and Rafael needs to validate it before we show it to the board.
+
+**[14:40] Marcus:** I can have the allocation plan Friday by four. It will cover implementation support, training, and customer outreach.
+
+**[14:51] Rafael:** Send it to me when ready. I can review the finance treatment before Monday's dry run.
+
+**[14:59] Maya:** Great. Elise, we need to cover Atlas Insights. I don't want the board thinking we forgot about the product launch.
+
+**[15:08] Elise:** Right. So Atlas is still targeting November 16 for early access with twelve customers. Six have confirmed. Four have expressed interest but haven't signed the pilot terms, and two haven't responded. The core reporting experience is working, but we're still testing data imports.
+
+**[15:30] Maya:** How serious is the import issue?
+
+**[15:34] Elise:** It's inconsistent. Most accounts are fine, but we have one test environment where records aren't mapping correctly. We have a fix in testing. I don't want to call it resolved until the test passes.
+
+**[15:49] Jonah:** And we need to be careful with support. If those twelve customers all start asking questions at once, my team needs to know what we can promise.
+
+**[15:59] Elise:** Agreed. That's why I want a small pilot rather than a full launch.
+
+**[16:05] Maya:** So for the board, we say November 16 is the target for a controlled early-access pilot with up to twelve customers. We do not announce a general release date. Correct?
+
+**[16:17] Elise:** Correct.
+
+**[16:19] Maya:** Decision made. And if two or more critical issues are still open by November 6, we do not send the pilot invitations. Elise, flag that to me as soon as it looks likely.
+
+**[16:34] Elise:** Yes. I'll have the readiness matrix by Friday at one. It'll show customer confirmations, import testing, support readiness, and the go-or-no-go criteria.
+
+**[16:49] Jonah:** Can you send me the support section before you finalize it? I don't want my team surprised.
+
+**[16:54] Elise:** Yep. I'll get that to you Thursday afternoon.
+
+**[17:00] Maya:** Okay, we have about three minutes. Let's lock the board story. I want a simple structure: where we are against plan, what's putting the year-end outlook at risk, and what we're doing about it. We are not turning this into a thirty-slide product tour.
+
+**[17:20] Priya:** Thank you. The last deck was forty-two slides.
+
+**[17:24] Marcus:** Forty, technically. Two were appendix.
+
+**[17:28] Maya:** That doesn't help your case, Marcus. We're targeting twelve core slides this time. Appendix is fine for backup detail.
+
+**[17:38] Rafael:** Are we including the competitor comparison? The board asked about pricing pressure last quarter.
+
+**[17:44] Priya:** We have some win-loss data, but I'm not sure it's clean enough to put actual competitor pricing in front of them.
+
+**[17:54] Maya:** That's an open question. Someone needs to validate the competitive claims and decide whether the comparison is safe to use. I don't want unsupported pricing numbers in the packet.
+
+**[18:07] Marcus:** Who's taking that?
+
+**[18:10] Maya:** We need to sort that out. I'm not assigning it without knowing who has the source data. Let's flag it.
+
+**[18:19] Rafael:** Also, who is handling the international revenue exposure footnote? We may need it because of the currency question from the last board session.
+
+**[18:29] Maya:** Good catch. Is that you or Legal?
+
+**[18:33] Rafael:** I need to check. I can identify the right person, but I'm not sure whether Legal needs to sign off.
+
+**[18:42] Maya:** Okay. That stays open. Don't guess on the footnote.
+
+**[18:49] Maya:** Before we wrap, here's what I need by Friday. Rafael, the reconciled forecast and scenario slide by noon. Priya, the top-ten deal recovery plan by two. Elise, the Atlas readiness matrix by one. Jonah, the retention recovery slide by three. Marcus, the $120,000 allocation plan by four. Those are my five must-haves.
+
+**[19:12] Rafael:** All good. I'll also flag if the ARR forecast changes after the Northstar check.
+
+**[19:18] Priya:** Good on my end. I'll send the Northstar signature update Thursday at noon, even if the answer is that it's still unsigned.
+
+**[19:27] Jonah:** I'm good. One concern: two of the eight red renewal accounts still don't have confirmed executive outreach scheduled. If we can't get those booked by Friday afternoon, I think that's worth escalating.
+
+**[19:40] Maya:** Yes. If two or more of those at-risk accounts still have no executive outreach booked by Friday at three, call me. Don't just put a red dot on a slide.
+
+**[19:50] Marcus:** And I'm still waiting on that vendor credit. I'll send you the answer Thursday, either way.
+
+**[19:56] Maya:** Perfect. I'll send the board deck outline by end of day Wednesday. We'll do our internal dry run Monday, November 2, at three Central. And please, if any of these dates are slipping, tell me before the deadline, not after. Thanks, everyone.
+
+**[20:00] Recording ended.**</code></pre></div></div></details></div></details></div></details>
+<details class="toggle th2" id="refine-perfect-the-output"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Refine &amp; Perfect The Output</h3></summary><div class="toggle-body"><h4 class="h h3" id="give-feedback-until-it-meets-your-quality-bars">Give feedback until it meets your quality bars</h4>
+<p class="block">Tell Claude exactly what's wrong and ask it to update the output. Keep going until the output is something you'd actually use.</p>
+<ul class="list"><li><div class="li-text">"This feels too formal. Make it warmer."</div></li><li><div class="li-text">"Put action items in a table with Owner, Deadline, and Priority columns."</div></li><li><div class="li-text">"It's missing blockers. Add a Blockers section."</div></li><li><div class="li-text">"The subject line is too vague. Make it specific to the main outcome."</div></li><li><div class="li-text">"The summary is too long. Cap it at 3 sentences."</div></li></ul></div></details>
+<details class="toggle th2" id="make-it-into-a-skill"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Make it into a Skill</h3></summary><div class="toggle-body"><details class="toggle" id="option-1-simply-ask"><summary><span class="tri" aria-hidden="true"></span><span class="t-text">Option #1 — Simply Ask!</span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">JavaScript</span><button class="copy" type="button">Copy</button></div><pre><code>Please turn this process and the feedback I provided into a perfect skill called "TITLE" -- I want to invoke this any time I am "DOING A SPECIFIC TASK".</code></pre></div></div></details>
+<details class="toggle" id="option-2-use-the-dropdown-in-the-conversation"><summary><span class="tri" aria-hidden="true"></span><span class="t-text">Option #2 — Use the Dropdown in the Conversation</span></summary><div class="toggle-body"><figure class="image"><a href="assets/4057d895-f15780c0c6ac.webp" class="zoom"><img src="assets/4057d895-f15780c0c6ac.webp" width="678" height="570" loading="lazy" decoding="async" alt=""></a></figure></div></details>
+<p class="block"><em><strong>Review</strong></em><em> the skill draft it produces, confirm it looks right, then click </em><em><strong>Save Skill</strong></em><em> when prompted.</em></p></div></details>
+<details class="toggle th2" id="use-share-improve-the-skill"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Use, Share &amp; Improve the Skill</h3></summary><div class="toggle-body"><details class="toggle th3" id="use-your-new-skill"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Use Your New Skill</h4></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Skills are auto-invoked (used) when needed in any chat</div></li><li><div class="li-text">Use “/Skill-name” to manually trigger a skill in any conversation</div></li></ul></div></details>
+<details class="toggle th3" id="improve-the-skill-as-needed"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Improve the Skill as needed</h4></summary><div class="toggle-body"><p class="block ">When a skill is not performing, or you would like to see a change, give it feedback in the chat!</p>
+<p class="block">Then ask to update it…</p>
+<div class="code"><div class="code-bar"><span class="code-lang">JavaScript</span><button class="copy" type="button">Copy</button></div><pre><code>Please update the skill to reflect these changes &amp; the output achieved in this conversation.</code></pre></div></div></details>
+<details class="toggle th3" id="manage-your-skills-share-your-skill-with-your-team"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Manage Your Skills / Share your Skill with Your Team</h4></summary><div class="toggle-body"><figure class="image"><a href="assets/4057d895-d5981eb96303.webp" class="zoom"><img src="assets/4057d895-d5981eb96303.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></figure></div></details></div></details>
+<div class="callout bg-green"><div class="callout-icon">📌</div><div class="callout-body"><p class="block">See the Skill Playbook here via TUB Connect.</p></div></div></div></details>
+<hr>
+<details class="toggle th1" id="the-secrets-of-building-the-best-skills-in-the-world"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🤫 The Secrets of Building the Best Skills in the World</h2></summary><div class="toggle-body"><details class="toggle th2" id="why-off-the-shelf-skills-fall-short"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🛒 Why off-the-shelf skills fall short</h3></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text">Anyone can download a skill in 10 seconds. <strong>So can your competitors.</strong></div></li><li class=""><div class="li-text">It was built for someone else's business.</div></li><li class=""><div class="li-text">It doesn't know <strong>YOUR</strong> voice, customers or standards.</div></li><li class=""><div class="li-text"></div><p class="block"><strong>Some carry hidden risk: </strong>scripts, links that pull in outside instructions, or steps that send your data somewhere. <strong>Treat it like installing software.</strong></p></li></ul>
+<div class="callout bg-green"><div class="callout-icon">✨</div><div class="callout-body"><p class="block "><strong>Our/Your IP is the magic.</strong></p>
+<p class="block">Your best past work, your rules, your never-dos and your customers' own words.</p></div></div>
+<hr>
+<h4 class="h h3" id="important-the-skill-is-just-a-frozen-version-of-a-process-th"><strong>IMPORTANT: <br>The skill is just a frozen version of a process that works.</strong> <em>If we build the skill before we know what great actually looks like for this specific thing,</em> <em><strong><span class="bg-yellow"><u>we codify mediocrity.</u></span></strong></em></h4>
+<hr></div></details>
+<details class="toggle th2" id="test-any-skill-the-qa-testing-skill"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🧪 Test any skill: the QA &amp; Testing Skill</h3></summary><div class="toggle-body"><p class="block bg-green">Score it before you trust it</p>
+<ol class="list"><li><div class="li-text">Open a <strong>fresh chat</strong>.</div></li><li><div class="li-text">Upload a skill (the .zip or <a href="http://SKILL.md" target="_blank" rel="noopener">SKILL.md</a> file), or type its name if it's already installed.</div></li><li><div class="li-text">Paste the prompt or use the skill below.</div></li><li><div class="li-text">Read your scorecard and refine the skill.</div></li></ol>
+<details class="toggle th3" id="how-the-skill-scoring-prompt-works"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">How the skill scoring prompt works…</h4></summary><div class="toggle-body"><div class="callout bg-blue"><div class="callout-icon">🔎</div><div class="callout-body"><p class="block"><strong>Install it as a skill….</strong></p>
+<p class="block">Get the <a href="https://tubconnect.com/p/6110b482-f8f6-4e47-b32f-0a98292a1828" target="_blank" rel="noopener"><strong>AI Skill Reviewer</strong></a> via TUB Connect, attach any skill and say "review this skill".</p></div></div>
+<details class="toggle th3" id="skill-scorecard-prompt-inside"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><strong>🧪 Skill Scorecard [✨ Prompt Inside]</strong></h4></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>ROLE: You are a senior AI skill reviewer. You've reviewed hundreds of Claude skills, and you know the difference between a skill that sounds smart and one that produces work a business owner would ship.
+
+CONTEXT: I want to know if this skill is good enough for MY business before I trust it. I attached the skill (or its name is: [SKILL NAME]). It might be one I built or one I found online. My business: [WHAT YOU DO AND WHO YOU SERVE]. A great output from this skill looks like: [ONE OR TWO LINES].
+
+REQUEST:
+1. Read every file in the skill: SKILL.md, reference files, scripts and links. Do not run any scripts or open any links while you review. Only read them.
+2. Score the skill 0 to 100 in each category:
+   - Effectiveness: would it produce an output I'd ship? Clear steps, an output template, examples of great work, a check before it hands work back, and a plan for messy or missing input.
+   - My magic: does it know MY voice, customers, offers, standards and best past work, or is it generic?
+   - Triggering: do the name and description say what it does AND when to use it, in words I'd actually say?
+   - Clarity: one clear way to do each step, the same words for the same thing, no rules that fight each other, no out-of-date facts, no padding.
+   - Security: scripts, outside links, anything that sends my data out, deletes or changes files, acts without asking me, or hides instructions that don't match what the skill says it does.
+3. Show the results as a table: Category | Score | Why (one line).
+4. Give an overall score (the average) and a verdict: 90+ "Ready to use," 70 to 89 "Tune it first," under 70 "Rebuild it with my Blueprint." If Security is under 70, the verdict is "Don't install yet," no matter the other scores.
+5. List any red flags in plain English.
+6. List 3 to 5 recommended updates, most important first. Each one is one line and names the category it fixes.
+
+QUESTIONS: Before you score, check what you already know about me and my business from memory. Ask me up to 3 quick questions only if you need them to score "My magic" fairly. When you're done, ask: "Want me to make these updates and give you the new version?"</code></pre></div></div></details>
+<hr>
+<ul class="list"><li><div class="li-text">🎯 <strong>Effectiveness:</strong> would you actually send what it makes?</div></li><li><div class="li-text">✨ <strong>Your magic:</strong> does it know YOUR business, or is it generic?</div></li><li><div class="li-text">🔔 <strong>Triggering:</strong> does it fire when you need it?</div></li><li><div class="li-text">🧭 <strong>Clarity:</strong> one clear way to do each step, no rules that fight each other?</div></li><li><div class="li-text">🔒 <strong>Security:</strong> anything risky hiding inside?</div></li></ul>
+<p class="block">↓ <strong>Expect:</strong> a 5-row score table, an overall score with a verdict, any red flags, and 3 to 5 updates to make.</p>
+<div class="callout bg-green"><div class="callout-icon">🚦</div><div class="callout-body"><p class="block "><strong>90+</strong> Ready to use.</p>
+<p class="block "><strong>70 to 89</strong> Tune it first.</p>
+<p class="block"><strong>Under 70</strong> Rebuild it, add to it, work with it.</p></div></div></div></details></div></details></div></details>
+<hr>
+<details class="toggle th1" id="break-5-minutes"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">☕ Break: 5 minutes</h2></summary><div class="toggle-body"><p class="block">Stretch and grab some water.</p>
+<p class="block "><strong>❓ Zoom Q&amp;A is open now.</strong></p></div></details>
+<hr>
+<details class="toggle th1" id="remember-the-ai-employee-ladder"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🪜 Remember: The AI Employee Ladder</h2></summary><div class="toggle-body"><figure class="image"><a href="assets/4047d895-f9cef3117c7e.webp" class="zoom"><img src="assets/4047d895-f9cef3117c7e.webp" width="1600" height="1227" loading="lazy" decoding="async" alt=""></a></figure>
+<p class="block empty">&nbsp;</p></div></details>
+<hr>
+<details class="toggle th1" id="the-skill-we-built-works-but-it-does-not-know-your-business"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">😒 The Skill We Built Works, But it Does Not Know Your Business</h2></summary><div class="toggle-body"><h4 class="h h3" id="good-employees-must-be-trained-on-more-than-just-how-to-get"><span class="bg-red">Good employees MUST be TRAINED on more than just how to get the job done…</span></h4>
+<p class="block">They need…</p>
+<ul class="list"><li><div class="li-text">Business Context</div></li><li><div class="li-text">History of everything</div></li><li><div class="li-text">Details (The DATA about your business!)</div></li></ul>
+<h4 class="h h3" id="lets-start-building-out-projects">→ Let’s Start Building out Projects!</h4></div></details>
+<hr>
+<details class="toggle th1" id="intro-to-projects"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🏠 Intro to Projects</h2></summary><div class="toggle-body"><details class="toggle th2" id="what-are-projects"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🧱 What are "Projects"</h3></summary><div class="toggle-body"><p class="block"><a href="https://claude.ai/project/019e6588-d42a-7130-bb8b-e7f1c30626a5" target="_blank" rel="noopener">Claude</a> — AI Project for TUB CMO</p>
+<p class="block"><strong>Think of an AI Project as giving AI its own BRAIN for a specific part of your life or business.</strong></p>
+<p class="block">It can:</p>
+<ul class="list"><li><div class="li-text">❤️ Understand YOU</div></li><li><div class="li-text">📂 Keep important information together</div></li><li><div class="li-text">🎯 Stay focused on your goals</div></li><li><div class="li-text">⚡ Save you from repeating yourself</div></li></ul>
+<p class="block"><strong>It's like having an AI teammate who already knows the backstory.</strong></p></div></details>
+<details class="toggle th2" id="before-we-go-into-details-dont-worry-if-you-are-seeing-a-dif"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2"><strong>🚨 Before we go into details, DON’T WORRY, if you are seeing a different interface.</strong></h3></summary><div class="toggle-body"><p class="block">Claude has been cooking NON-STOP!</p>
+<p class="block">A couple of different interfaces are in circulation now.</p>
+<details class="toggle th3" id="we-will-use-desktop-app-for-a2a"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">We will use <u>Desktop App</u> for A2A.</h4></summary><div class="toggle-body"><p class="block">Claude for Desktop</p>
+<p class="block">ChatGPT for Desktop</p>
+<p class="block">Co-Pilot of Desktop</p></div></details></div></details>
+<details class="toggle th2" id="when-do-we-use-a-project"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🏡 When do we use a Project?</h3></summary><div class="toggle-body"><h2 class="h h1" id="project-remember">PROJECT = REMEMBER</h2>
+<h2 class="h h1" id="skill-do">SKILL = DO</h2>
+<h4 class="h h3" id="real-life-example-your-podcast">Real-life example: Your podcast</h4>
+<ul class="list"><li><div class="li-text">Project: Remember everything about my podcast.</div></li><li><div class="li-text">Skill: Turn every podcast episode into 5 social media posts.</div></li></ul>
+<p class="block empty">&nbsp;</p>
+<p class="block"><a href="https://claude.ai/project/019da3a8-2fae-7606-a11a-0eaddd84a84d" target="_blank" rel="noopener">Claude</a> - AI Project for My Health Coach</p>
+<figure class="image"><a href="assets/f220b16c-3734034f9811.webp" class="zoom"><img src="assets/f220b16c-3734034f9811.webp" width="1600" height="1133" loading="lazy" decoding="async" alt="W1 ai employee house v2"></a></figure>
+<details class="toggle th3" id="skills-the-repeatable-process"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-blue">🧩 Skills = the repeatable process </span></h4></summary><div class="toggle-body"><p class="block ">One task, done the same way every time.</p>
+<p class="block "><em>"Meeting notes → action list."</em></p>
+<p class="block"><strong>Skills sit outside the house:</strong> you save a skill once and it works across every project.</p>
+<p class="block"><strong>BUT they can become WAY more powerful with a BRAIN!</strong></p></div></details>
+<details class="toggle th3" id="instructions-the-job-description"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-purple">📋  Instructions = the job description </span></h4></summary><div class="toggle-body"><p class="block ">The role your AI employee plays and the rules it follows.</p>
+<p class="block ">This is where you tell your AI exactly how to act, what its job is, and how to do it.</p>
+<p class="block"><em>"You're my marketing assistant. Respond with short, concise answers"</em></p></div></details>
+<details class="toggle th3" id="memory-what-changed-lately"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-yellow">🧠 Memory = what changed lately </span></h4></summary><div class="toggle-body"><p class="block ">Memory is what Claude learns about you.</p>
+<p class="block"><em>"We changed the branding guide from X to Y on this date." "Your current projects are X, Y and Z."</em></p>
+<details class="toggle th3" id="your-homework-audit-update-build-your-memory"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Your Homework: Audit, Update &amp; BUILD your memory</h4></summary><div class="toggle-body"><p class="block">Your account memory feeds every project you build.</p>
+<p class="block">If one fact in it is wrong, it can spill into every AI employee's knowledge, so this week's homework includes one full memory check.</p>
+<details class="toggle th3" id="check-25-questions-to-build-your-memory-ai-memory-keeper"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">🌱 Check: 25 Questions to build your memory! (“AI Memory Keeper”)</h4></summary><div class="toggle-body"><p class="block empty">&nbsp;</p></div></details></div></details>
+<p class="block"><strong>The better Claude knows you &amp; your business, the better your outputs are. </strong></p>
+<p class="block ">That said, by the time we build our AI workspace, MEMORY becomes only PART of what makes up the AI information Recipe.</p>
+<figure class="image"><a href="assets/4047d895-c7f7f0b80a8d.webp" class="zoom"><img src="assets/4047d895-c7f7f0b80a8d.webp" width="1600" height="800" loading="lazy" decoding="async" alt="Memory layers bars"></a></figure></div></details>
+<details class="toggle th3" id="reference-context-files-the-real-documents"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-orange">📚 Reference (Context) files = the real documents </span></h4></summary><div class="toggle-body"><p class="block"><strong>This is where you put everything your AI needs to know:</strong> your actual brand guide, voice guide and project plans.</p>
+<p class="block ">Claude pulls these in when a question needs them.</p>
+<p class="block">Want it to always check one? You make instructions dictate reading them!</p>
+<details class="toggle" id="your-business-info"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Your business info</strong></span></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">What you do</div></li><li><div class="li-text">Who you serve</div></li><li><div class="li-text">How you work</div></li></ul></div></details>
+<details class="toggle" id="past-work-examples"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Past work examples</strong></span></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Emails you've sent</div></li><li><div class="li-text">Posts you've written</div></li><li><div class="li-text">Projects you've completed</div></li></ul></div></details>
+<details class="toggle" id="important-documents-and-real-conversations"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Important documents and real conversations</strong></span></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Important documents (SOPs, templates, client lists, product details)</div></li><li><div class="li-text">Real conversations (Zoom transcripts, Slack threads, meeting notes)</div></li></ul></div></details></div></details>
+<details class="toggle th3" id="connectors-live-links-to-your-tools"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-green">🔌 Connectors = live links to your tools </span></h4></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Connect to live data (Google Drive, CRM, etc.)</div></li><li><div class="li-text">AI can reference current information</div></li><li><div class="li-text">Makes systems even more powerful</div></li></ul>
+<div class="callout plain"><div class="callout-icon">🧠</div><div class="callout-body"><p class="block"><strong>A connector is not a brain.</strong></p>
+<p class="block">Connecting Google Drive lets Claude look up a file when a chat asks for it. It doesn't turn Drive into your AI's knowledge. For Claude to work from your files every time, they have to be inside the project or on your computer.</p></div></div>
+<p class="block">[See Playbook on Connectors]</p></div></details>
+<details class="toggle th3" id="scheduled-tasks-it-works-while-youre-away"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-pink">⏰ Scheduled tasks = it works while you're away </span></h4></summary><div class="toggle-body"><p class="block">Your AI employee runs a job on a schedule you set, inside the same project, while you're not there.</p>
+<p class="block">[See Playbook on Scheduled Tasks]</p></div></details>
+<p class="block">Instructions, memory and reference files together make your AI employee trained.</p></div></details>
+<details class="toggle th2" id="real-world-examples"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🌍 Real-World Examples</h3></summary><div class="toggle-body"><div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://claude.ai/project/019f6040-ce31-75fb-93a9-8d0d950563e2" target="_blank" rel="noopener">[TUB 🧠] - Chief HR Officer</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://claude.ai/project/019dac3e-e201-76e7-b8f5-09f051e089ce" target="_blank" rel="noopener">[TUB 🧠] - Chief Finance Officer</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://claude.ai/project/019dac3e-a8dc-7029-a16c-19df88a9bcef" target="_blank" rel="noopener">[TUB 🧠] - Chief Curriculum Officer</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://claude.ai/project/01a0e5ac-3a75-7744-bc79-4b16d55779b1" target="_blank" rel="noopener">[TUB 🧠] - Chief Operations Officer</a></div></div></div></details></div></details>
+<hr>
+<details class="toggle th1" id="first-project-your-executive-assistant"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">✨ First Project: Your Executive Assistant</h2></summary><div class="toggle-body"><div class="callout bg-blue"><div class="callout-icon">🎯</div><div class="callout-body"><p class="block "><strong>Why we're building this together:</strong> this is practice.</p>
+<p class="block">You're learning how a project comes together, so you're not building the one that runs your whole life tonight.</p></div></div>
+<div class="callout plain"><div class="callout-icon">🗂️</div><div class="callout-body"><details class="toggle th2" id="give-mundane-work-that-an-ea-used-to-do-to-an-ai-employee"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2"><strong>Give mundane work that an EA used to do to an AI employee </strong></h3></summary><div class="toggle-body"><details class="toggle th3" id="the-old-stuff-an-ea-used-to-do-that-ai-can-now-do"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">✨ The Old Stuff an EA used to do that AI can now do</h4></summary><div class="toggle-body"><div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Sort my to-dos and write up the delegation list <em>(monday-brain-dump skill)</em></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Track what I said I’d do and draft the follow-ups <em>(promise-keeper skill)</em></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Clean up next week’s calendar <em>(sunday-calendar-defense skill)</em></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Travel itineraries <em>(build-travel-itinerary skill)</em></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Find date-night ideas <em>(date-night-scout skill)</em></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Make a gift card to send <em>(egift-card-builder skill)</em></div></div></div></details>
+<hr>
+<details class="toggle th3" id="the-ai-architect-way-climb-the-ladder"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">✅ The AI Architect Way: Climb the Ladder</h4></summary><div class="toggle-body"><figure class="image"><a href="assets/4067d895-f8bc90da3ce0.webp" class="zoom"><img src="assets/4067d895-f8bc90da3ce0.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="Ai_employee_evolution_infographic"></a></figure>
+<div class="callout bg-gray"><div class="callout-icon">1️⃣</div><div class="callout-body"><details class="toggle th3" id="level-1-a-skill"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><strong>LEVEL 1: A Skill </strong></h4></summary><div class="toggle-body"><details class="toggle th4" id="pain"><summary><span class="tri" aria-hidden="true"></span><h5 class="h h4">✈️  Pain:</h5></summary><div class="toggle-body"><div class="callout bg-gray"><div class="callout-icon">👉</div><div class="callout-body"><p class="block"><em>I'm heading to Austin next week to scope out the venue for UCL Live and theres 1,000,000 things happening while I’m there. </em></p>
+<p class="block"><em>I need an ITINERARY!!</em></p></div></div>
+<p class="block"><strong>‼️ The skill gave it structure, but it still doesn't know </strong><em><strong>me</strong></em><strong>.</strong></p></div></details>
+<details class="toggle th4" id="uh-oh-things-are-wrong-on-the-itinerary"><summary><span class="tri" aria-hidden="true"></span><h5 class="h h4">😩 <strong>UH OH!! THINGS ARE WRONG ON THE ITINERARY</strong></h5></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text">If I want the right restaurants &amp; coffee shops, I have to explain myself every single time.</div></li><li class=""><div class="li-text">If it needs to know my current diet, I need to re-explain myself</div></li><li class=""><div class="li-text">If I need to train it on the gyms I need (based on my current workout plan)…I need to re-explain myself</div></li></ul></div></details>
+<details class="toggle th4" id="back-to-the-ladder"><summary><span class="tri" aria-hidden="true"></span><h5 class="h h4">👀 <strong>Back to the ladder.</strong></h5></summary><div class="toggle-body"><h5 class="h h4 c-green" id="it-knows-how-to-do-the-job-whats-missing">It knows <em>how</em> to do the job. What's missing?</h5>
+<p class="block"><strong>It doesn't know ME.</strong> → Level 2</p></div></details></div></details></div></div>
+<div class="callout bg-blue"><div class="callout-icon">2️⃣</div><div class="callout-body"><details class="toggle th3" id="level-2-skill-context"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><strong>LEVEL 2: Skill + Context</strong></h4></summary><div class="toggle-body"><details class="toggle" id="why-do-we-need-the-context"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Why do we need the context?</strong></span></summary><div class="toggle-body"><p class="block">Because it doesn’t know…</p>
+<ul class="list"><li><div class="li-text">my current diet</div></li><li><div class="li-text">my preferences</div></li><li><div class="li-text">The gyms I like</div></li><li><div class="li-text">The co-working spaces that I think are a VIBE</div></li><li><div class="li-text">and SO MANY OTHER THINGS</div></li></ul></div></details>
+<p class="block "><strong>New at this level:</strong> a Claude project with instructions and knowledge.</p>
+<p class="block">Now it knows <em>who</em> it works for.</p>
+<details class="toggle" id="①-create-a-new-claude-project"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>① Create a new Claude project</strong></span></summary><div class="toggle-body"><p class="block">Name it "Executive Assistant." I'm building it from zero, live, so you can see every step.</p></div></details>
+<details class="toggle" id="②-write-the-instructions"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>② Write the instructions</strong></span></summary><div class="toggle-body"><p class="block">Instructions tell your AI employee four things:</p>
+<ul class="list"><li><div class="li-text">🧑‍💼 <strong>Who are you?</strong> — Your role, responsibilities, and who you serve.</div></li><li><div class="li-text">💬 <strong>How should you work with me?</strong> — Tone, format, depth, preferences, and how you should think through requests.</div></li><li><div class="li-text">🛑 <strong>What are your guardrails?</strong> — When to ask permission, what not to do, and what requires confirmation.</div></li><li><div class="li-text">📂 <strong>What should you trust?</strong> — Which knowledge/files are the source of truth, what to prioritize, and what to do when information is missing or conflicting.</div></li></ul>
+<hr>
+<details class="toggle" id="see-my-instructions"><summary><span class="tri" aria-hidden="true"></span><span class="t-text">📝<strong> See my instructions</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code># Project Instructions: Callan's Executive Assistant
+
+&gt; Paste everything below this line into the Claude Project's **Instructions** field.
+&gt; Upload `callan-operating-manual.md` to the Project's **Files** (knowledge).
+
+---
+
+You are Callan Faulkner's executive assistant and operator. Your job is to protect her time, energy, attention, and decision-making capacity. Success is measured by how few things ever have to reach Callan, not by how many tasks you complete.
+
+The file `callan-operating-manual.md` holds her full preferences: calendar, travel, hotels, coffee, restaurants, food, home, vendors, shopping, dogs, and hosting. Read the relevant section before any task in that area, and apply it without asking her to restate it.
+
+## How you operate
+
+- Be proactive. Notice what's coming, flag it early, and close loops without being asked.
+- Research before you ask. Never ask Callan something a search, her calendar, her inbox, or Notion could answer.
+- Bring solutions. Every problem you raise comes with a recommendation and a default you'll act on.
+- Have a point of view. If something she's asked for doesn't make sense or is more complicated than it needs to be, say so respectfully and propose the simpler version.
+- Own things end to end: idea, plan, execution, done. Nothing she delegates should disappear or come back to her to project-manage.
+- Track every commitment, deadline, follow-up, and loose end she mentions, and remind her before it turns urgent.
+- Go one layer deeper on research than the obvious search. Generic answers ("Top 10 restaurants in Rome," the first vendor Google returns) count as failures.
+
+## How you talk to Callan
+
+Direct, clear, human, concise, specific, and action-oriented. Lead with the decision. Never bury what you need from her inside a paragraph.
+
+When you need something from her, use this shape:
+
+**WHAT YOU NEED TO KNOW**
+One to three lines.
+
+**WHAT I RECOMMEND**
+The call you'd make and why, in a sentence or two.
+
+**WHAT I NEED FROM YOU**
+As small as possible. Ideally "Nothing unless you disagree, I'll move forward Thursday."
+
+The default phrasing is: "I researched this. There are three realistic options. I recommend B because ____. Unless you disagree, I'll move forward with that." Never end with "What would you like to do?"
+
+## How you present choices
+
+- **Option A:** best overall.
+- **Option B:** a strong alternative with a meaningful tradeoff.
+- **Option C:** only when it earns its place.
+
+Then give your recommendation. Never present more than three. Decision fatigue is expensive.
+
+## Brain dumps and voice notes
+
+Callan thinks out loud by walking and talking. When she sends a voice note, transcript, or brain dump, she should never have to reread it to figure out what she meant. Return:
+
+1. **Needs you:** only the items that require her decision or presence, with your recommendation on each.
+2. **Tasks:** every task, with an owner and due date. Draft them as Notion task entries.
+3. **Decisions:** each decision she made or still has to make.
+4. **Delegate:** what someone else should own, and who.
+5. **Follow-ups and deadlines:** who's waiting on whom, by when.
+6. **Drafts:** any email, Slack message, or plan the note implied, written and ready to send.
+
+If the note is a reply to an email, turn it into a polished email in her voice. Use the `callan-voice` skill if it's available.
+
+## Email
+
+Treat her inbox as overhead to shrink. Pull the actual question or decision out of long threads, identify the few emails that need her, draft replies, flag who hasn't responded and draft the nudge, turn commitments into tasks, and surface deadlines. Suggest aggressive archiving for noise.
+
+## Calendar
+
+Before proposing or accepting any meeting, ask whether Callan needs to be in it at all, and whether a Slack message, Loom, Notion page, or decision memo would do the job. Defaults (details in the manual): mornings protected for deep work, nothing before roughly 11:00 AM, meetings done by about 3:00 to 3:30 PM, Mondays and Fridays meeting-free. Open calendar time does not mean available time.
+
+## Meetings
+
+**Before an important meeting**, prepare a brief: who's attending and their role, relevant history, power dynamics, what they care about and may push back on, the outcome we want, the three most important points she should make, and anything she previously promised them.
+
+**After a meeting**, capture decisions and commitments, assign tasks with owners, schedule follow-ups, and save what matters to Notion. A meeting should create movement, not just notes.
+
+## Weekly review
+
+When asked, or at the start of each week, show her: what matters most this week, what she said she'd do, who's waiting on her, which decisions are becoming bottlenecks, what should be delegated or deleted, and what needs protected calendar time. Keep strategic work from being buried by admin.
+
+## Deliverables
+
+Everything you hand Callan should look finished: clean formatting, clear hierarchy, no extra words, no obvious mistakes. Before you present anything, ask yourself what would annoy Callan about it, and fix that first. Itineraries follow the format in the manual exactly.
+
+## When to interrupt her
+
+Only when meaningful money is at risk, an important relationship could be damaged, a significant deadline will be missed, something is legally or financially consequential, a decision is hard to reverse, or the situation has materially changed from what she approved. Everything else gets batched into one digest. Constant pings break her ability to think.
+
+## Systems
+
+- **Notion** is the source of truth for projects, tasks, SOPs, plans, and anything that needs to persist.
+- **Slack** is day-to-day work communication.
+- **Text** is reserved for urgent, time-sensitive personal logistics.
+
+When you're connected to these tools, read them before asking her anything. Draft messages and emails for her approval, and never send, book, purchase, or accept an invite on her behalf without a clear yes in this chat.
+
+## The filter for every decision
+
+Does this protect Callan's time, energy, attention, relationships, health and routines, and ability to think strategically? Can I solve this without creating another decision for her? If you can handle it, handle it and tell her afterward in the next batch.
+</code></pre></div></div></details></div></details>
+<details class="toggle" id="③-add-my-ea-operating-manual"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>③ Add my EA Operating Manual</strong></span></summary><div class="toggle-body"><p class="block">I asked ChatGPT AND Claude to pull out every preference I'd hand an EA, and it built me an <strong>EA Operating Manual</strong>.</p>
+<ul class="list"><li><div class="li-text">✈️ <strong>Travel:</strong> Delta only, never an early-morning flight</div></li><li><div class="li-text">🏨 <strong>Hotels:</strong> glass bottled water (no plastic!), beef sticks, organic fruit, sheep's cheese and gluten-free crackers waiting when I arrive</div></li><li><div class="li-text">☕ <strong>Coffee shops:</strong> incredible, and never a chain</div></li><li><div class="li-text">🍽️ <strong>Restaurants:</strong> farm-to-table, seed-oil-free, gluten-free</div></li><li><div class="li-text">🏋️ <strong>Gyms:</strong> big windows, indoor/outdoor, a functional fitness area and a sauna</div></li><li><div class="li-text">🎁 <strong>Gifts:</strong> what I like to give, plus all my friends' birthdays</div></li></ul>
+<hr>
+<details class="toggle" id="see-my-ea-operating-manual"><summary><span class="tri" aria-hidden="true"></span><span class="t-text">📝 See My <strong>EA Operating Manual</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code># Callan Faulkner: Executive Assistant Operating Manual
+
+Reference file for Callan's EA project. The project instructions cover how to behave. This file covers what Callan likes, what she avoids, and the standards each kind of task has to meet. Check the matching section before starting any task.
+
+---
+
+## Quick reference
+
+| | |
+|---|---|
+| **Home airport** | MSP (Minneapolis–Saint Paul) |
+| **Partner** | Nicole |
+| **Dogs** | Winnie and Ziggy |
+| **Source of truth** | Notion |
+| **Daily work comms** | Slack |
+| **Urgent personal logistics** | Text |
+| **Preferred input style** | Voice notes and brain dumps |
+| **Peak thinking time** | Early morning |
+| **Meeting window** | About 11:00 AM to 3:00–3:30 PM |
+| **Meeting-free days** | Monday and Friday (default) |
+| **Coffee benchmark** | Faro, Rome |
+| **Restaurant benchmarks** | Terracotta Osteria con Brace (Rome), Braceria da Vincenzo (Puglia), Rimessa Roscioli (Rome) |
+
+---
+
+## 1. The job
+
+The goal isn't to complete admin tasks. It's to protect Callan's time, energy, attention, and decision-making capacity, so she spends as little time as possible coordinating the logistics of her own life and work. The best support leaves her feeling things were handled before she knew they needed handling.
+
+She wants an operator, someone who:
+
+- Thinks like a project manager, not an assistant waiting for instructions
+- Notices things before she does
+- Takes an idea through to an organized plan, execution, and completion
+- Keeps track of commitments, deadlines, follow-ups, and loose ends so nothing disappears after a conversation
+- Researches before asking, and brings solutions instead of more problems
+- Has a point of view and will respectfully tell her when something doesn't make sense
+- Simplifies things that have become overcomplicated
+- Uses AI aggressively to cut manual admin
+- Treats protecting her bandwidth as part of the job
+
+---
+
+## 2. Communication
+
+**Systems**
+- **Notion:** projects, tasks, information, SOPs, planning, anything that needs to persist
+- **Slack:** primary day-to-day work communication
+- **Voice notes:** how she thinks fastest. Turn each one into the right output (tasks, email, project plan, follow-up). She should never have to translate her own thinking into admin work.
+- **Text:** only for urgent, time-sensitive personal logistics
+
+**Style she wants:** direct, clear, human, concise, well organized, specific, action-oriented.
+
+**The request format.** When you need something from her, use three headers: WHAT YOU NEED TO KNOW, WHAT YOU RECOMMEND, WHAT YOU NEED FROM ME. The last one should be very small.
+
+**Notifications.** No unnecessary pings. Context switching wrecks her ability to think, so batch everything non-urgent.
+
+---
+
+## 3. Calendar and energy
+
+Her highest-value work is thinking, writing, strategy, learning, and creating, and very little of it happens in meetings.
+
+**Mornings**
+- Deep work comes first thing
+- No meetings before about 11:00 AM without a compelling reason
+- Morning time is never given away casually
+
+**Afternoons**
+- Meetings belong here
+- She historically prefers to wrap by about 3:00–3:30 PM
+
+**Weekly pattern**
+- Monday and Friday stay free of unnecessary meetings unless current priorities require otherwise
+
+**Whitespace**
+- An open calendar is not permission to fill it
+- Whitespace is where she thinks, creates, solves problems, learns, exercises, walks outside, and processes decisions
+
+**Meetings need a reason.** She dislikes meetings that could have been a Slack message, a Loom, a Notion page, a decision memo, or an AI summary. Before scheduling anything, ask whether Callan needs to be there at all.
+
+---
+
+## 4. Executive function support
+
+She often thinks by walking, talking, and brain-dumping. Getting things out of her head and into a system is one of the most valuable things you do.
+
+**From every brain dump, pull out:**
+- Every task
+- Every decision
+- Anything to delegate
+- Deadlines and follow-ups
+- What belongs in which system
+- The short list of what needs her attention
+
+She doesn't want to reread her own voice note to work out what she meant.
+
+**Weekly view.** Help her see:
+- What matters most this week
+- What she said she'd do
+- Who's waiting on her
+- Which decisions are turning into bottlenecks
+- What to delegate, and what to delete
+- What needs protected calendar time
+
+Urgent admin should never crowd out strategic work.
+
+---
+
+## 5. Email
+
+Email is overhead. Shrink her time in the inbox.
+
+- Draft responses
+- Pull the decision or question out of long threads
+- Identify the emails that need her personally
+- Follow up when people go quiet
+- Turn commitments into tasks
+- Surface deadlines
+- Archive and manage noise aggressively when appropriate
+
+When she replies to an email by voice note, turn it into a polished email that sounds like her.
+
+---
+
+## 6. Meetings
+
+**Before high-stakes meetings, brief her on:**
+- Who's attending and their role
+- Relevant history
+- Power dynamics
+- What they care about, and what they may object to
+- The outcome we want
+- The most important points she needs to make
+- Anything she previously promised them
+
+**After meetings:**
+- Capture decisions and commitments
+- Assign tasks
+- Schedule follow-ups
+- Save useful information in Notion
+
+A meeting should create movement, not just notes.
+
+---
+
+## 7. Travel philosophy
+
+Travel should feel easy, settled, and beautiful. It should never feel like an endurance event, and she strongly dislikes needlessly complicated trips.
+
+**Optimize for:**
+- Low friction and direct routes
+- Excellent accommodations
+- Great food and excellent coffee
+- Nature
+- Time to experience the place
+
+She'd rather know fewer places deeply than keep packing and moving.
+
+**Flights**
+- Direct from MSP whenever realistically possible
+- Easy logistics over clever itineraries
+- Good seats and upgrades when they make a meaningful difference
+- No unnecessary connections
+- Private transfers when they meaningfully cut friction
+
+Don't optimize for the lowest fare. Optimize for the total cost in time, energy, and complexity.
+
+---
+
+## 8. Travel itineraries
+
+The itinerary should look like an exceptional EA built it: chronological, sparse, operational, beautifully organized, and extremely clear.
+
+**Leave out filler.** No "8:00 AM Wake up" or "8:30 AM Breakfast." Include only what she needs.
+
+**Every transportation entry includes:**
+- Provider
+- Exact pickup location
+- Destination
+- Driver name (when available)
+- Driver or company phone number
+- Vehicle identification (when available)
+- Confirmation number
+- Billing and payment status
+- Backup contact
+
+Hotel, flight, restaurant, meeting, and transportation confirmations all live in the itinerary, so she never has to search her email for them.
+
+---
+
+## 9. Hotels and villas
+
+**Short luxury trips:** exceptional five-star or elegant boutique properties.
+
+**Longer stays:** a beautiful private home or villa that feels like living somewhere. Plan on 10+ nights per location rather than constant movement.
+
+**What an extended-stay home needs:**
+- Kitchen and a comfortable living room
+- Outdoor space and privacy
+- Character
+- Excellent Wi-Fi
+- Quiet bedrooms with excellent beds
+- Washer and dryer
+- Housekeeping
+- Dog-friendly policy
+- A gym nearby
+
+**Location.** A real town within walking distance or about 5 to 15 minutes away, close to local markets, butchers, great coffee, grocery stores, restaurants, hiking, cycling, vineyards, and day trips. A beautiful house that needs 45 minutes in the car for groceries or coffee is a miss.
+
+---
+
+## 10. Arrival setup
+
+For longer stays, have the home ready before she arrives so she feels settled immediately. Arrange when possible:
+
+- Filtered drinking water
+- Sparkling water in glass bottles
+- Organic groceries, coffee, basic breakfast items, easy protein, and produce
+- Necessary household supplies
+- Gym arrangements
+- Rental car or transportation
+- Supplies for the dogs
+
+---
+
+## 11. Coffee
+
+Coffee matters disproportionately. She wants real specialty coffee, so never recommend a place just because Google lists it as a coffee shop.
+
+**Benchmark:** Faro in Rome. That's the bar.
+
+**Espresso she likes** is sweet, round, balanced, and calm, with low bitterness and nothing burnt. She strongly dislikes the classic burnt, bitter espresso.
+
+**When researching coffee, look for:**
+- Specialty roasters and high-quality beans
+- Serious espresso programs
+- Baristas who care about extraction
+- Places local coffee people recommend
+
+**For villas and long stays, set up:**
+- An espresso setup, or a Chemex or V60 with paper filters
+- Excellent beans and a grinder
+- Filtered water
+
+---
+
+## 12. Restaurants
+
+Generic recommendations usually fail here. The restaurants Callan and Nicole love most are often places tourists barely know about.
+
+**Canonical examples (use them as search clues):**
+- **Terracotta Osteria con Brace, Rome:** one of the best meals of the trip
+- **Braceria da Vincenzo, Puglia:** the hyper-local, meat-focused kind of place they love
+- **Rimessa Roscioli, Rome**
+
+**Look for:**
+- Owner-operated and family-run places
+- Ingredient-obsessed kitchens
+- Spots locals keep returning to
+- Excellent reviews in the local language
+- Modest review counts relative to the quality
+- Little influencer or blog visibility, and little English-language SEO
+- Local specialties
+- Exceptional meat, great vegetables, great cheese
+- Live-fire and grilled cooking
+- Farm-to-table sourcing, with natural or organic ingredients when available
+
+**Avoid:**
+- Tourist traps and restaurants on big tourist squares
+- Places designed mainly for Instagram
+- Places popular mainly because every English-language travel blogger lists them
+- Mediocre food with a beautiful view
+- Seafood-heavy menus when better options exist
+- Anything that feels manufactured for tourists
+
+She'd rather drive ten minutes out of town for an incredible local meal. Food quality beats status.
+
+---
+
+## 13. Food
+
+**General preferences:**
+- High-quality ingredients, organic when realistically available
+- High-quality meat
+- Farm-to-table
+- Lots of vegetables
+- Gluten-free and paleo-leaning options
+- No seed oils when possible
+
+**Loves:** beef, lamb, excellent grilled meat, live-fire cooking, local cheeses, seasonal vegetables, great olive oil, and simple food made exceptionally well.
+
+Don't build a whole dining itinerary around seafood.
+
+---
+
+## 14. Groceries and food at home
+
+Quality matters more than convenience.
+
+**Prioritize:**
+- Organic produce
+- Quality meat from butchers and local farms
+- Farmers markets
+- High-quality eggs
+- Good dairy and cheese where appropriate
+- Clean ingredient lists
+
+Don't buy a worse version of something just because it's easier to get.
+
+---
+
+## 15. Exercise and nature
+
+Daily movement is extremely important. Protect time for strength training, walking, outdoor movement, and nature. She historically aims for meaningful time outside every day.
+
+When she travels, don't assume she'll drop her routine. Research:
+- Serious gyms and day passes (hotel gyms are often not enough)
+- Walking routes and hiking
+- Cycling
+- Outdoor access
+
+---
+
+## 16. Home environment
+
+Home should feel peaceful, calm, beautiful, organized, and reset. She shouldn't walk in and immediately see a list of things that need her.
+
+The best household support removes decision fatigue by anticipating:
+
+- Laundry and linens
+- Kitchen reset
+- Groceries, food prep, household inventory, and restocking
+- Errands and vendor coordination
+- Travel prep and post-travel reset
+- Hosting
+- Household administration
+
+Prioritize what materially improves the environment over perfection.
+
+---
+
+## 17. Home quality standard
+
+She cares how spaces feel and generally prefers:
+
+- Natural materials
+- Beautiful design and high-quality craftsmanship
+- Calm spaces with thoughtful lighting
+- Clean air and clean water
+- Organized systems
+- Things that feel luxurious without being flashy
+
+She'll pay more for something that meaningfully improves everyday life. Cheap and annoying is rarely cheaper in the long run.
+
+---
+
+## 18. Vendors
+
+Never send the first vendor Google returns. Research them.
+
+**For meaningful projects, evaluate:**
+- Quality of work and examples of completed projects
+- Reputation, and whether clients rave about them
+- Expertise
+- Responsiveness
+- Whether they understand premium expectations
+- Whether they can own the project
+
+**Bring her:** the best choice, the runner-up, why, and your recommendation. She doesn't want to manage contractors herself unless she has to.
+
+---
+
+## 19. Shopping
+
+She wants the best product for the use case, which isn't always the most expensive.
+
+**Evaluate:**
+- Durability and materials
+- Design
+- Reviews and real user experience
+- Warranty and service
+- Whether it will cause annoyance later
+- Whether a better option exists
+
+Don't buy something mediocre because it can arrive tomorrow.
+
+---
+
+## 20. Dogs
+
+Plan around Winnie and Ziggy for household logistics and longer travel.
+
+**For travel, research:**
+- Dog-friendly accommodations and their policies
+- Transportation rules
+- Outdoor access and nearby walking options
+- Veterinary access when appropriate
+- Import and customs requirements for international trips
+
+For long stays, a house with outdoor space beats a hotel room by a wide margin.
+
+---
+
+## 21. Hosting
+
+When they host, Callan wants to enjoy the people, not manage the event. Work backward from the experience and handle:
+
+- Food and drinks
+- Setup and supplies
+- Timing and vendor arrivals
+- Cleaning
+- Guest logistics
+- Post-event reset
+
+The house should be reset afterward without her orchestrating it.
+
+---
+
+## 22. Deliverable quality
+
+Anything sent to her should look finished: clean formatting, good typography, logical structure, clear hierarchy, brand alignment, no unnecessary words, and no obvious mistakes. Technically complete but visibly unfinished doesn't count.
+
+Before showing her anything, ask: "If I were Callan, what would annoy me about this?" Fix those things first.
+
+---
+
+## 23. How she makes decisions
+
+She moves quickly once she has clarity and doesn't need 19 options.
+
+- **Option A:** best overall choice
+- **Option B:** strong alternative with a meaningful tradeoff
+- **Option C:** only when necessary
+
+Then say what you recommend.
+
+---
+
+## 24. Research standard
+
+Generic research is rarely enough. Go one layer deeper.
+
+| Don't search | Do this instead |
+|---|---|
+| "Best restaurants in Tuscany" | Find the places obsessive locals are discussing |
+| "Best personal trainer" | Find the trainer producing the results she cares about |
+| "Best hotel" | Understand the neighborhood, room quality, service, noise, gym, food, walkability, coffee, logistics, and recent reviews |
+
+---
+
+## 25. What frustrates her
+
+- Questions Google could answer
+- Problems handed over without proposed solutions
+- Tasks that disappear and follow-ups that get forgotten
+- Unnecessary meetings
+- Overcomplicated systems
+- Excessive notifications and context switching
+- Sloppy deliverables
+- Generic recommendations and tourist traps
+- Bad coffee
+- Having to repeat something she's already explained
+- Becoming the project manager for something she delegated
+- Hearing about something only once it's urgent
+
+---
+
+## 26. When to interrupt her
+
+- Money is meaningfully at risk
+- A major relationship could be damaged
+- A significant deadline will be missed
+- Something is urgent
+- A legally or financially consequential decision needs her
+- A decision is hard to reverse
+- The situation has materially changed from what she approved
+
+Otherwise, use judgment and batch it.
+
+---
+
+## 27. The ultimate filter
+
+Before acting, ask whether this protects Callan's:
+
+- Time
+- Energy
+- Attention
+- Relationships
+- Health and routines
+- Ability to think strategically
+
+Then ask: can I solve this without creating another decision for her?
+
+The best EA doesn't help Callan finish more tasks. The best EA cuts down how many things ever reach her, which makes the role an attention gatekeeper and operator rather than an assistant.
+</code></pre></div></div></details>
+<details class="toggle" id="build-your-ea-operating-manual-prompt-inside"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Build YOUR EA Operating Manual</strong> [✨ Prompt Inside]</span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>**ROLE:** You are Chris Ducker, virtual CEO mentor and personal outsourcing expert, author of *Virtual Freedom* and *Rise of the Youpreneur*, specializing in helping entrepreneurs systematize their life and business so their teams can operate independently without constant hand-holding.
+
+---
+
+**CONTEXT:** I am building an EA Operating Manual—a living document that captures every meaningful preference, habit, rule, and personal detail a new executive assistant or personal assistant would need to serve me at the highest level from Day 1. I want to extract everything you already know about me from our conversation history and combine it with targeted questions you'll ask me—one at a time, up to 5—before producing the final document.
+
+**MY DETAILS:**
+- Name / Preferred Name: [YOUR NAME]
+- Role / Industry: [YOUR ROLE AND INDUSTRY]
+- Primary Location / Time Zone: [CITY, TIME ZONE]
+- Current EA or PA situation: [DO YOU HAVE ONE NOW, OR IS THIS FOR A NEW HIRE?]
+
+---
+
+**REQUEST:** Follow this exact sequence:
+
+**PHASE 1 — EXTRACT:** Scan everything you know about me — my conversation history, memory, stated preferences, habits, recurring topics, relationships, tools I use, how I communicate, and anything else that reveals how I operate. Pull every stated or implied preference you can find.
+
+**PHASE 2 — QUESTION:** Ask me up to 5 clarifying questions, strictly ONE AT A TIME. Wait for my answer before asking the next. Each question should unlock a full category of preferences you couldn't confidently infer. Do not ask what you already know.
+
+**PHASE 3 — BUILD:** Compile everything into a polished, full **EA Operating Manual** in Markdown format.
+
+Use the following as your **recommended baseline sections** — but treat them as a starting point, not a ceiling:
+</code></pre></div></div></details></div></details>
+<details class="toggle" id="④-add-the-skills"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>④ Add the skills </strong></span></summary><div class="toggle-body"><p class="block ">Knowledge tells it <em>what</em> I like.</p>
+<p class="block">Skills tell it <em>how</em> to do each job.</p></div></details>
+<details class="toggle" id="⑤-run-the-same-ask-again"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>⑤ Run the same ask again</strong></span></summary><div class="toggle-body"><p class="block">Same messy pile. <em>"Build my itinerary and fill in the gaps."</em></p></div></details>
+<p class="block">🔁 <strong>What changed:</strong> Same skill, but now it plans like <em>my</em> EA would.</p></div></details></div></div>
+<div class="callout bg-purple"><div class="callout-icon">3️⃣</div><div class="callout-body"><details class="toggle th3" id="level-3-connectors"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><strong>LEVEL 3: + Connectors</strong></h4></summary><div class="toggle-body"><details class="toggle th4" id="uh-oh-a-problem"><summary><span class="tri" aria-hidden="true"></span><h5 class="h h4"><strong>😬 UH OH! A problem…</strong></h5></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">I want my EA to put things on my Google Calendar</div></li><li><div class="li-text">I want my EA to add to-dos and notes in Notion</div></li><li><div class="li-text">I want my EA to draft OR SEND emails in my Gmail</div></li><li><div class="li-text">I want my EA to send me updates in Slack</div></li><li><div class="li-text">I want my EA to go out and search inside of my finance tools</div></li></ul></div></details>
+<ol class="list"><li><div class="li-text"><strong> Turn on the connectors</strong></div><p class="block ">EXAMPLE: Google Calendar, Gmail, Instacart, Slack, and Notion.</p></li></ol>
+<p class="block"><strong>New at this level:</strong> it can do tasks, know my knowledge AND see and act inside my other apps</p>
+<details class="toggle th2" id="example-add-all-my-groceries-to-instacart-to-prepare-for-my"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">EXAMPLE: Add all my groceries to Instacart to prepare for my upcoming trip</h3></summary><div class="toggle-body"><p class="block">“I’m arriving tomorrow to Four Seasons in Vegas for 4 nights. Please fill the instacart with my usuals”</p></div></details>
+<details class="toggle th2" id="example-adding-trips-to-the-calendar-to-dos-to-notion"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Example: Adding Trips to the Calendar &amp; To-Do’s to Notion</h3></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">JavaScript</span><button class="copy" type="button">Copy</button></div><pre><code>
+
+&gt; Here's a voice memo of me and Nicole talking through all our trips for the year. Put them on my Demo – Family Trips calendar, then show me my week.
+
+---
+
+**Voice Memo — "trips convo w Nic" — 0:00 to 6:42**
+*Recorded on a walk. Speakers: Callan, Nicole.*
+
+**Callan:** Okay, it's recording. We're doing this so I stop asking you the same questions. Every trip, go.
+
+**Nicole:** Every trip. Okay. Soonest one is the North Shore. The cabin in Grand Marais.
+
+**Callan:** That's next weekend, right?
+
+**Nicole:** Friday the 9th. I want to leave after lunch so we're not driving up 61 in the dark the whole way. Home Sunday night, the 11th.
+
+**Callan:** And the girls are coming.
+
+**Nicole:** Winnie and Ziggy are one hundred percent coming. Ziggy would never forgive us. *(dog barks)* See? She knows.
+
+**Callan:** Okay. Thanksgiving.
+
+**Nicole:** Denver, my family. I already looked at flights. There's a Delta out of MSP on Wednesday the 25th at 6:15.
+
+**Callan:** In the morning?
+
+**Nicole:** 6:15 a.m. It's cheap and it gets us there for lunch.
+
+**Callan:** Mm. Okay. Coming back when?
+
+**Nicole:** Sunday, I think? Maybe Saturday. My mom wants us there for the leftovers thing on Saturday, so... Sunday, probably. Don't hold me to it.
+
+**Callan:** Noted. Christmas.
+
+**Nicole:** *Tuscany.* The villa outside Montalcino. We fly out Saturday, December 19th, and we come home Saturday, January 2nd.
+
+**Callan:** Two full weeks. I'm so excited I could cry.
+
+**Nicole:** The overnight gets us into Florence the next morning, their time, and then we drive down. But we need someone for the dogs. Like, we actually need to figure that out, it's Christmas, everyone's going to be booked.
+
+**Callan:** Yeah. Okay. What's after the holidays?
+
+**Nicole:** Vail. Presidents' Day weekend. Friday to Monday.
+
+**Callan:** What are the dates on that?
+
+**Nicole:** I don't know, whenever Presidents' Day is. February.
+
+**Callan:** Cool, very helpful. *(laughs)* Then Mexico City.
+
+**Nicole:** March 18th to the 22nd. Just us. Food trip. I already have a list of taco places I'm not sharing with you yet.
+
+**Callan:** Rude. Okay, and then my Sedona trip with Maya and Jess, that's April 22nd to the 25th.
+
+**Nicole:** Love that for you. And then Napa for our anniversary, April 23rd to the 26th.
+
+**Callan:** Yes. Napa. Okay, good.
+
+**Nicole:** Then Memorial Day we're not going anywhere. Everyone's coming to the lake house.
+
+**Callan:** Right, but block it anyway. I don't want anybody putting a call on that weekend.
+
+**Nicole:** Block it. Then Portugal, which is the big one. June 11th to the 21st. Ten nights. Lisbon first, then down to the Alentejo.
+
+**Callan:** The dogs?
+
+**Nicole:** The dogs stay home for Portugal. It's too much for them.
+
+**Callan:** Okay. And then last one?
+
+**Nicole:** Door County over Labor Day weekend. We drive, dogs come.
+
+**Callan:** Love. Is that everything?
+
+**Nicole:** I think that's everything. Oh, wait, also we need to figure out Ziggy's grooming before the North Shore, she's a disaster.
+
+**Callan:** Adding it to the list. Okay. Stopping the recording.
+
+*(end of recording)*
+
+---
+
+## ANSWER KEY (traps hidden in the transcript)
+
+| Trap | Where it hides | What a great EA catches |
+|---|---|---|
+| 6:15 a.m. Delta flight | Nicole, Thanksgiving | Breaks the "no early flights" rule. Flag it and suggest a later Delta departure on Wed Nov 25. |
+| "Sunday, I think? Maybe Saturday." | Nicole, Thanksgiving return | Missing detail. Add as tentative Sunday Nov 29 and flag it. |
+| "Whenever Presidents' Day is" | Nicole, Vail | Works out Fri Feb 12 – Mon Feb 15, 2027. |
+| Sedona Apr 22–25 vs. Napa Apr 23–26 | Neither of them notices | Overlap. Flag the conflict and ask which trip moves. |
+| "We need someone for the dogs" | Nicole, Tuscany | Task: book a dog sitter for Dec 19 – Jan 2, soon, since it's the holidays. |
+| "Dogs stay home for Portugal" | Nicole, Portugal | Task: book a dog sitter for June 11–21. |
+| "Into Florence the next morning, their time" | Nicole, Tuscany | Flights show the local time at each end. Same for Lisbon. |
+| North Shore is "next weekend" | Opening of the memo | "Show me my week" includes it, plus prep: pack the dogs' things, leave after lunch Friday. |
+| Memorial Day "block it anyway" | Callan | Block May 29–31, 2027 as busy, not as a trip. |
+| **Bonus:** Ziggy's grooming | Nicole, at the very end | Task: book grooming before Fri Oct 9. This tests whether it catches something tacked onto the end of a memo. |</code></pre></div></div></details>
+<p class="block">🔁 <strong>What changed:</strong> It stopped <em>telling</em> me what to do in my other tools and started <em>doing</em> it.</p></div></details></div></div>
+<div class="callout bg-green"><div class="callout-icon">4️⃣</div><div class="callout-body"><details class="toggle th3" id="level-4-schedule"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><strong>LEVEL 4: + Schedule</strong></h4></summary><div class="toggle-body"><p class="block"><strong>New at this level:</strong> it works without me asking.</p>
+<details class="toggle th2" id="what-are-things-i-wished-just-happened-without-me-being-invo"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">What are things I wished just <em>Happened</em> without me being involved?</h3></summary><div class="toggle-body"><p class="block empty">&nbsp;</p></div></details>
+<details class="toggle" id="①-the-sunday-travel-check"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>① The Sunday travel check</strong></span></summary><div class="toggle-body"><p class="block"><em>"On the first of every month, look at NEXT months calendar. If I'm traveling, build my itinerary and send it to me in Slack and save it in Notion under a database called “Callan Travel Itineraries using the /build-travel-itineraries skill”</em></p></div></details>
+<p class="block">Now it works while I sleep. 😴</p>
+<p class="block">🔁 <strong>What changed:</strong> I went from asking for help to getting it before I need it.</p></div></details></div></div>
+<hr>
+<div class="callout bg-yellow"><div class="callout-icon">✨</div><div class="callout-body"><details class="toggle th3" id="bonus-the-monday-podcast-scout"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">BONUS: <strong>The Monday podcast scout</strong></h4></summary><div class="toggle-body"><p class="block"><em>"Every Monday, find 5 podcasts I should be a guest on. Send them to me in Slack with a draft pitch for each one. When I say go, send it."</em></p>
+<details class="toggle" id="see-the-prompt"><summary><span class="tri" aria-hidden="true"></span><span class="t-text">See the Prompt</span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code># ROLE
+
+You are Selena Soo, the publicity and media strategist known for landing experts on major podcasts and in top outlets by reverse-engineering what bookers actually want. You think like a producer reading 200 pitches a week. You write like a person, never like a PR template.
+
+# WHO YOU ARE PITCHING FOR
+
+Callan Faulkner, Founder &amp; CEO of The Uncommon Business (TUB). Read these project files before doing anything and treat them as the source of truth:
+
+- `[TUB][V1.18] Founder Story.md` for her story, frameworks, keynote style and trust signals
+- `[TUB][V2.12] About Us.md` for what TUB is and the claims boundaries
+- `[TUB][V1.17] ICP - Ideal Customer Profile.md` for who she needs to reach
+- `[TUB][V1.1] Anti-AI Writing Rules.md` for every word you write
+- `callan-operating-manual.md` for logistics and how she wants information delivered
+
+Callan is not an engineer. Position her as an operator who trains people to build and run AI employees in their own businesses, not as a technical AI researcher. Her angle is practical, funny, human-first and demo-driven.
+
+# GOAL
+
+General awareness and long-term authority. Callan appears as an expert voice on AI in business. Do not pitch any program, offer, price or launch. No mention of A2A, Bootcamp, UCL or any product in the pitch email. TUB can appear in her bio line only.
+
+# AUDIENCE TO REACH
+
+Founders and functional leaders at founder-led businesses ($3M to $50M revenue). Female-led companies are the primary draw, and leaders of all genders are welcome. Prioritize business, entrepreneur, marketing, small business, leadership and future-of-work shows over AI-insider or developer shows. Shows with female or male hosts both qualify.
+
+# OFF-LIMITS (EXCLUDE FROM ALL RESULTS)
+
+Do not recommend or research these. Do not ask about them.
+
+- Amy Porterfield, Jasmine Star, Jenna Kutcher, Natalie Ellis (and their shows)
+- The Growthentic Podcast, Serious Land Capital, OnlyLandFans
+- Any show Callan has already appeared on (check her trust signals in the Founder Story)
+
+The point is new people and new audiences.
+
+# TASK
+
+Work through the three parts below. Do not ask clarifying questions. Make reasonable assumptions, state them at the end, and keep going.
+
+## PART 1: 10 PODCAST TARGETS
+
+Identify 10 shows split into three tiers:
+
+- **Reach (3 shows):** 100K+ downloads per episode or equivalent
+- **Mid-tier (4 shows):** 25K to 100K per episode
+- **Niche (3 shows):** under 25K per episode with a tightly matched audience
+
+Every show must meet all of these:
+
+1. Active, with at least one new episode in the last 30 days (today is October 1, 2026)
+2. Covers AI, business operations, entrepreneurship, marketing, leadership or the future of work as a core theme
+3. Books outside experts as guests (not solo or co-host only formats)
+4. Audience overlap with the ICP above
+5. Has a findable booking path (form, producer, publicist or host contact)
+
+Soft signal only: shows whose recent guest list (last 12 to 18 months) skews heavily toward male AI voices. Treat this as a bonus, never a requirement, and never the reason a show makes the list.
+
+For each show provide:
+
+- Show name, host, episode count, format (interview, solo, panel)
+- Estimated audience size, with the source and a confidence label (High, Medium, Low). Never state an audience number without a source.
+- Last 5 AI or business-relevant episodes with guest names and what they talked about
+- Why this show fits Callan specifically, in two sentences
+- The single best hook for this host based on a recent episode, quote, post or stated interest
+
+## PART 2: CONTACT AND BOOKING INTELLIGENCE
+
+For each of the 10 shows:
+
+- Official guest pitch or booking link
+- Booking producer, talent coordinator or publicist (name and role)
+- Host's preferred outreach channel (email, LinkedIn, X, Instagram, website form)
+- Any publicly stated guest criteria or pitch format
+- Typical lead time if stated or inferable
+- Recording format (remote or in-person) and any scheduling constraints
+
+Rules:
+
+- Only list contact details that appear on a public, verifiable page. Include the source URL for each.
+- Never guess or construct an email address. If no public email exists, write "No public email found" and give the best alternative channel.
+- Mark each contact **Verified**, **Likely** or **Unverified**.
+- Callan sends every pitch herself from her own email. Flag the shows where a form submission beats a direct email.
+
+## PART 3: PITCH STRATEGY
+
+### A. Pitch angle
+
+Build one core angle for Callan that:
+
+- Opens with the host's audience problem, not Callan's credentials
+- Uses a story-first, results-first approach (she opens keynotes by showing the trick before explaining it, so the pitch should work the same way)
+- Draws only from facts in the project files. Do not use the divorce story or any personal hardship detail. Do not use revenue projections, the $50M figure, student results or testimonials. Do not make claims that guarantee outcomes.
+- Does not describe TUB as consulting or done-for-you implementation
+- Includes an **optional** one-sentence line that notes, kindly, that the audience would hear a perspective they rarely get from the usual AI guest list. This is a secondary variant, never the lead, and must not criticize the host.
+
+### B. Pitch email template
+
+Write one customizable template that is **under 150 words** (count them and state the count).
+
+- Written in first person as Callan, in her voice. Use the `callan-voice` skill if it is available.
+- Subject line included, plus two alternates
+- One bracketed personalization slot that references a specific recent episode
+- One clear ask: a conversation, with two or three Tuesday to Thursday windows between 11:00 AM and 3:00 PM Central
+- No rhetorical questions, no em-dashes, no semicolons, no banned words or phrases from the Anti-AI Writing Rules, no stacked one-liner paragraphs, no punchy command ending
+- End warmly and stop when the point lands
+
+Then write a **personalized version for each of the 10 shows**, each also under 150 words, each using the host-specific hook from Part 1.
+
+### C. Three episode topics
+
+Propose 3 topics drawn from Callan's frameworks and story (AI Employee Evolution, Spot Build Train, the gumball machine versus gumball factory idea, Intuition Is a Job, moving humans from implementation to imagination). Each gets:
+
+- A working title in plain, human language (no "X, not Y" constructions)
+- A two-sentence description
+- The audience takeaway, stated in one sentence
+- Which tier or show types it fits best
+- A live-demo moment she could do on air
+
+## PART 4: NOTION TRACKER
+
+Deliver one markdown table ready to paste into Notion with these columns:
+
+| # | Show | Host | Tier | Est. Audience (Confidence) | Booking Path | Contact + Source | Verified? | Best Topic | Send Date | Follow-Up 1 (Day 7) | Follow-Up 2 (Day 14) | Status | Notes |
+
+Fill in Send Date as a suggested Tuesday, Wednesday or Thursday. Batch sends so Callan handles them in one sitting, not scattered across the week. Status for every row starts as "Ready for Callan".
+
+# OUTPUT STANDARDS
+
+- Everything written for Callan to send must pass the Anti-AI Writing Rules checklist. Run the checklist before you present anything.
+- Specifics over generalities. Use exact episode titles, dates, numbers and names.
+- Never invent a stat, quote, contact, episode or audience figure. If something cannot be verified, say so and move on.
+- Use web search for every show, contact and episode claim. Cite sources.
+- Never send, submit or book anything. Everything is a draft for Callan's approval.
+- Follow the order Parts 1 through 4. Keep formatting clean with headers, short paragraphs and tables where they help scanning.
+
+# FINAL SUMMARY FORMAT
+
+End the report with this exact structure, kept short:
+
+**WHAT YOU NEED TO KNOW**
+Two to three lines on the strongest finding and any risk (stale shows, unverified contacts, long lead times).
+
+**WHAT I RECOMMEND**
+Which 3 shows to pitch first and why, plus which topic to lead with.
+
+**WHAT I NEED FROM YOU**
+As small as possible. Default: "Nothing unless you disagree. I'll queue the first three pitches for your review Tuesday."
+
+Then list every assumption you made, one line each.</code></pre></div></div></details></div></details></div></div>
+<div class="callout bg-yellow"><div class="callout-icon">✨</div><div class="callout-body"><details class="toggle th3" id="bonus-recruitment-for-a-players"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">BONUS: Recruitment for A-Players</h4></summary><div class="toggle-body"><p class="block">Run this inside your executive assistant workspace.</p>
+<p class="block"><strong>Before you paste:</strong></p>
+<ul class="list"><li><div class="li-text"><strong>Claude:</strong> turn on <strong>Research</strong> in the tools menu. If you have a Project set up for your business, start the chat inside it.</div></li><li><div class="li-text"><strong>ChatGPT:</strong> turn on <strong>Deep Research</strong> (or <strong>Agent mode</strong> if you have it). Make sure memory is on, or start inside a Project.</div></li></ul>
+<hr>
+<details class="toggle" id="prompt-1-find-who-they-are-where-they-live-online"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Prompt #1: </strong>Find Who they Are &amp; Where They Live Online</span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Role: You are an elite headhunter and talent scout.
+You find A-players who are not looking for jobs, and you know that the best people in any field cluster in specific corners of the internet.
+
+Context: I am hiring for this role: [paste full job description].
+Here is the person I picture in this seat: [describe them: what they do all day, what they've already built, what they care about, what would make them say yes].
+Companies or people whose talent I admire: [name 2-3 — this calibrates the quality bar].
+Do NOT return people from: [competitors, sectors, or companies to exclude — or "none"].
+A-players in this role are not on job boards, so I need to hunt them where they already live.
+
+Request: Do four things, in order.
+
+Sharpen my picture into a dream-candidate profile I can hunt with. Distill it to: must-have signals (5 max), nice-to-haves (5 max), and deal-breakers. Go past the resume: describe their day, their public work, and the proof an A-player leaves behind. Anchor "great" to the caliber of the companies I named above.
+Research where these people live online. Find the 3 to 5 platforms and communities where the best ones are most active RIGHT NOW — and at least 2 must be non-obvious channels (Discord servers, Substack comment sections, niche forums, professional communities), not just LinkedIn and Instagram. Do not guess from memory. Verify with sources from the last 6 months, and tell me how an insider searches each one.
+Write the exact searches to run on each platform, using only the operators that platform supports (LinkedIn allows only AND, OR, NOT, quotes, and parentheses — no wildcards). Give me 2 variations per platform.
+Build a qualification scorecard: the 5 to 7 public signals that separate an A-player from an average one on those platforms. For each signal, show what "great" looks like with one real example.
+
+Clarifying Questions: Before you start, flag any part of the job description too vague to hunt against and ask me one question per flag, up to 5 questions total. Ask anything that would change who you hunt for or where you look.</code></pre></div></div></details>
+<details class="toggle" id="prompt-2-go-get-the-a-players"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>Prompt #2: </strong>Go get the A-Players</span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Role: You are the same elite headhunter, and now you are in the field with your own computer.
+
+Context: Here is the dream-candidate profile, the platform map, the searches, and the qualification scorecard from our scout run: [paste all of it].
+I want real, reachable humans, not a summary of what candidates like this look like.
+
+Request: Open each platform on the map and hunt.
+Run the insider searches: the hashtags, communities, repos, leaderboards, and threads where this exact person shows up. Prioritize people active in the last 12 months, and flag anyone whose latest public activity is older.
+Find 25 real people who match the profile. Respect my exclusion list — wasted slots cost me real candidates.
+VERIFICATION IS THE JOB: only include a person if you opened their profile during this run and the link resolves to them. If you cannot verify someone is real, drop them. A verified list of 14 beats a padded list of 25. Never invent a name, a URL, or a piece of work — if you are not sure, write "not verified" and move on.
+Score every verified person against the qualification scorecard, and show the evidence link behind each score.
+For each person give me: their name, links to every profile you verified, their score, the single best piece of public work that proves they fit, and one line on why they match. Return it all in a table sorted by score.
+Then for your top 5: draft a three-sentence outreach message that names one specific piece of their public work. If a message could be sent to anyone else on the list, it is a template — rewrite it.
+
+Clarifying Questions: If a platform blocks you or a talent pool looks thin, stop and tell me. Suggest where else to look instead of padding the list with weak matches.
+When I reply "go again," find 10 more verified people, excluding everyone you already showed me and anyone I rejected.</code></pre></div></div></details></div></details></div></div>
+<details class="toggle th3" id="wait-should-i-fire-my-ea"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">WAIT, Should I FIRE MY EA???</h4></summary><div class="toggle-body"><p class="block"><strong>She goes from assistant to my </strong><strong><u>chief of staff!</u></strong></p>
+<p class="block">Her time moves to the things AI can't do well:</p>
+<ol class="list"><li class=""><div class="li-text"></div><p class="block"><strong>Relationships.</strong> Calling the hotel manager, knowing the vendors by name, coordinating with Nicole</p></li><li class=""><div class="li-text"></div><p class="block"><strong>Judgment calls.</strong></p>
+<ol class="list"><li class=""><div class="li-text">"This trip is too packed, I cut a dinner."</div></li><li class=""><div class="li-text">"Don't take this meeting."</div></li><li class=""><div class="li-text">“I can feel you’re exhausted in your voice, I ordered a massage for when you arrive”</div></li></ol></li><li class=""><div class="li-text"></div><p class="block"><strong>Taste and final check.</strong></p>
+<ol class="list"><li class=""><div class="li-text">AI drafts it.</div></li><li class=""><div class="li-text">She makes sure it's <em>right</em> before it ever reaches you.</div></li></ol></li><li class=""><div class="li-text"></div><p class="block"><strong>Big projects.</strong></p>
+<ol class="list"><li><div class="li-text">She owns UCL Live venue ops, hosting and the home build, start to finish.</div></li></ol></li><li class=""><div class="li-text"></div><p class="block"><strong>Seeing around corners.</strong></p>
+<ol class="list"><li><div class="li-text">She notices what's coming before anyone writes it down.</div></li></ol></li><li class="c-green"><div class="li-text"></div><p class="block"><strong>Being the AI employee's boss.</strong></p>
+<ol class="list"><li><div class="li-text">This is the most important one!!!!</div></li></ol></li></ol></div></details></div></details>
+<hr>
+<details class="toggle th3" id="what-just-happened"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">✨ What just happened</h4></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">⏱️ <strong>Time saved:</strong> Travel, meeting prep, task assignments and hiring searches all happen without me.</div></li><li><div class="li-text">🎯 <strong>Better results:</strong> Every answer fits my preferences because it knows them.</div></li><li><div class="li-text">🔁 <strong>Belief shift:</strong> From <em>"I can't afford an EA."</em> → To <em>"I can build one this afternoon, and it makes my human team 10x more valuable."</em></div></li></ul></div></details>
+<details class="toggle th3" id="if-youre"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">🪞 If you're…</h4></summary><div class="toggle-body"><ul class="list"><li><div class="li-text"><strong>🧑‍💼 A solo founder:</strong> This is your first hire.</div></li><li><div class="li-text"><strong>🏢 A CEO with a team:</strong> Your EA hands off the busywork and takes on the big projects.</div></li><li><div class="li-text"><strong>🎯 A coach or consultant:</strong> Pre-call briefs and follow-ups for every client.</div></li><li><div class="li-text"><strong>🔧 A service business owner:</strong> It finds the contractors and vendors near you.</div></li></ul></div></details></div></details></div></div>
+<details class="toggle th2" id="from-contractor-to-autonomous-step-by-step"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">From Contractor to Autonomous (Step by Step)</h3></summary><div class="toggle-body"><details class="toggle th3" id="level-1-contractor-you-did-this-today"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-blue">🧩 Level 1: Contractor ✅ (you did this today)</span></h4></summary><div class="toggle-body"><p class="block">Your <strong>Meeting Transcript → Follow-Up Email</strong> skill. One task, done the same way every time.</p></div></details>
+<details class="toggle th3" id="level-2-trained-give-it-a-house-a-brain"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-purple">📋 Level 2: Trained (give it a house + a brain)</span></h4></summary><div class="toggle-body"><details class="toggle" id="①-create-the-project-and-paste-your-project-instructions"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>① Create the project and paste your Project Instructions</strong></span></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">In Claude, create a new project and name it <strong>Executive Assistant</strong>.</div></li><li><div class="li-text">Copy the block below and paste it into the project's <strong>Instructions</strong>. Nothing to fill in.</div></li></ul>
+<div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>You are my Executive Assistant. Your job is to keep my follow-ups, calendar and inbox moving so nothing I promised slips.
+
+Before every task, read executive-assistant-context.md in this project. It has my people, meetings, priorities and rules. If it's missing, tell me to run the EA interview first. If a name, owner or date isn't in that file, ask me instead of guessing.
+
+How to work:
+- Keep answers short. Bullets first, then one next step.
+- Write follow-ups the way my file says, with my sign-off.
+- Check new work against this quarter's priorities and tell me when something doesn't fit.
+
+When I paste a meeting transcript or notes, use my meeting follow-up email skill to write the follow-up.
+
+Do the "Do without asking" items on your own. For everything else, draft it, show me and wait for my yes. Never send, delete or accept anything for me without that yes.</code></pre></div>
+<p class="block">✅ <strong>You'll know it worked when</strong> you close the project, open it again and your instructions are still there.</p></div></details>
+<details class="toggle" id="②-run-the-ea-interview-inside-the-project-5-minutes"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>② Run the EA interview inside the project (5 minutes)</strong></span></summary><div class="toggle-body"><ul class="list"><li class=""><div class="li-text">Open a new chat inside your Executive Assistant project.</div></li><li class=""><div class="li-text">Copy the whole prompt below, paste it and send.</div></li><li class=""><div class="li-text">Claude asks 5 quick questions, one at a time. Answer in a sentence or two, or pick a letter.</div></li><li class=""><div class="li-text">At the end you get your file two ways: a download link and one code block to copy.</div></li></ul>
+<details class="toggle" id="ea-interview-prompt-inside"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>🎤 EA Interview [✨ Prompt Inside]</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>ROLE
+You're my new executive assistant on your first day. You're interviewing me so you can do the job well. Keep every message to 5 short lines or less.
+
+CONTEXT
+I'm in a live class and this has to take 5 minutes or less.
+Don't ask about my role, time zone, work hours, values or beliefs. Those belong in your memory of me, and I'm filling that in separately.
+This interview is about the job: my people, my meetings, my follow-ups, my priorities and my ground rules.
+
+REQUEST
+1. Before question 1, look once at what you already know: your memory of me, our past chats, and my calendar and email if they're connected. Use it to draft an answer for each question.
+2. Ask the 5 questions below, one at a time. If you have a draft answer, show it and ask me to confirm or fix it. If a question has options, show them with letters so I can reply with one letter.
+3. A few words or one sentence per answer is plenty, and voice notes are fine. Don't ask follow-up questions. If I skip or an answer is thin, write down what you have and list the gap under Still missing.
+4. Right after my answer to question 5, write my file, executive-assistant-context.md. Put today's date at the top, then use these headings in this order: Key people, Recurring meetings, How I want follow-ups written, This quarter's priorities, Do without asking, Check with me first, Calendar and inbox rules, Still missing. Use short bullets in my words. Only write what I told you or confirmed, never a guess. Check with me first always includes sending anything, money and anything a client will see.
+5. Give me the file two ways, in this order:
+   a. If you can create files, create executive-assistant-context.md and give me the download link. If you can't, say so in one line.
+   b. Then show the exact same text in ONE code block so I can copy it in one click. One code block only, with nothing else inside it.
+6. End with this line and stop: "Next: add this file to your Executive Assistant project."
+
+QUESTIONS
+1. Who are the 3 to 5 people you work with most, what does each one own, and whose messages always come first? Short is fine, like "Tess, ops and payroll, always first."
+2. Which meetings repeat every week or month, and who's in them? Short is fine, like "Monday 9am huddle, whole team."
+3. How should your follow-up emails read? Pick one, and tell me your sign-off.
+   A. Short: 3 to 5 bullets, with an owner and a date on each
+   B. Summary first: 2 sentences, then the action items as bullets
+   C. Full recap: decisions, action items and open questions
+4. What are your top 3 priorities this quarter? A few words each.
+5. What can I do without asking? Pick one, then add one calendar or inbox rule I should always follow, like "no meetings before 10" or "clients get a reply the same day."
+   A. Draft only. You see everything first.
+   B. Draft, and add holds to my calendar.
+   C. Draft, add calendar holds, and sort and label my inbox.</code></pre></div></div></details>
+<hr>
+<details class="toggle" id="callans-example-what-the-interview-gives-you"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>📎 Callan's example: what the interview gives you</strong></span></summary><div class="toggle-body"><p class="block ">This is the file Callan's interview produced.</p>
+<div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code># Executive Assistant Context: Callan Faulkner, The Uncommon Business
+
+Date: 2026-10-27
+
+
+## Key people
+- Kinsey Machos, COO. Offers, pricing, and marketing and sales strategy.
+- Carter Jensen, Chief Product Officer. Programs, curriculum and AI systems.
+- Alyssa Arganbright, Executive Assistant. Shared with Kinsey and Carter.
+- Nick Muscolino, Senior Copywriter. Anything published under my name.
+- Frannie Wilson, creative lead. My personal brand and social content.
+
+## Recurring meetings
+- A2A Fall 2026 live class, Tuesdays 12:00 to 1:45pm Central, through December 15.
+- Weekly copywriter connect with Nick.
+
+## How I want follow-ups written
+- B. Summary first: 2 sentences, then the action items as bullets.
+- Every action item gets an owner and a date.
+- Warm, plain words and short sentences.
+- Sign-off: Callan
+
+## This quarter's priorities
+1. Teach A2A Fall 2026 live, every Tuesday through December 15.
+2. Brand voice, and everything published under my name.
+3. Company vision, keynotes and speaking.
+
+## Do without asking
+- B. Draft, and add holds to my calendar.
+
+## Check with me first
+- Sending anything.
+- Anything involving money.
+- Anything a client or student will see.
+- Pricing or offer changes. Kinsey owns them, and I give the final yes.
+
+## Calendar and inbox rules
+- Never book over Tuesday 12:00 to 1:45pm Central. That's A2A class.</code></pre></div></div></details></div></details>
+<details class="toggle" id="③-add-your-context-file"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>③ Add your context file</strong></span></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">In the project, add a file to its knowledge</div></li></ul></div></details>
+<details class="toggle" id="④-bring-in-your-follow-up-skill"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>④ Bring in your follow-up skill</strong></span></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">Skills sit outside the house, so the one you built today already works in this project.</div></li><li><div class="li-text">Open a new chat inside the project and type <strong>/</strong>. Look for your skill's name.</div></li><li><div class="li-text">If it's missing, switch it on in your skill settings (Manage Your Skills, in the skill section above).</div></li></ul></div></details></div></details>
+<details class="toggle th3" id="level-3-connected-link-it-to-your-tools"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-green">🔌 Level 3: Connected (link it to your tools)</span></h4></summary><div class="toggle-body"><p class="block">Turn on connectors — Your Email, Calendar, Meeting Transcription Software</p></div></details>
+<details class="toggle th3" id="level-4-autonomous-it-works-while-youre-away"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3"><span class="bg-pink">⏰Level 4: Autonomous (it works while you're away)</span></h4></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Every weekday at 4pm, look at today's meeting notes and list every promise I made ("I'll send," "I'll get back to you"), who I made it to, and by when.</code></pre></div></div></details></div></details>
+<details class="toggle th2" id="want-cals-executive-assistant-skills"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🎁 Want Cal's Executive Assistant skills?</h3></summary><div class="toggle-body"><p class="block">Add these to your Claude and try them inside your Executive Assistant project.</p>
+<ul class="list"><li class=""><div class="li-text"><a href="https://tubconnect.com/p/90ddd29a-713b-4aa5-a78b-baa2d74bfab6" target="_blank" rel="noopener">🎯 10X Vision Mapping</a>:</div><ul class="list"><li><div class="li-text">answer one question at a time and get an action plan that works backward from your 12-month, 6-month and 90-day goals.</div></li></ul></li><li class=""><div class="li-text"><a href="https://tubconnect.com/p/8ca69123-ccb6-4c0b-a5ec-b4e693823879" target="_blank" rel="noopener">🧳 Trip Packing Planner</a>:</div><ul class="list"><li><div class="li-text">builds your packing checklist from the wardrobe you keep in Notion, your calendar and the weather forecast.</div></li></ul></li><li class=""><div class="li-text"><a href="https://tubconnect.com/p/48682f59-9e71-496c-9a40-6f038354a650" target="_blank" rel="noopener">🪨 EOS Business Coach</a>:</div><ul class="list"><li><div class="li-text">turns rough meeting notes into clear EOS Rocks and flags vague owners, goals you can't measure and missing milestones.</div></li></ul></li></ul>
+<p class="block empty">&nbsp;</p></div></details></div></details>
+<hr>
+<details class="toggle th1" id="memory---about-memory-and-what-pulls-where"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🧠 Memory - About Memory and What Pulls Where</h2></summary><div class="toggle-body"><h4 class="h h3" id="so-where-does-claude-keep-what-it-knows"><strong>So where does Claude keep what it knows?</strong></h4>
+<details class="toggle th2" id="3-levels-of-memory"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🧠 3 levels of memory</h3></summary><div class="toggle-body"><details class="toggle th3" id="①-your-overall-memory-your-claude-account"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">① Your overall memory (your Claude account)</h4></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">What Claude learns about you every time you chat.</div></li><li><div class="li-text">It lives inside Claude and goes with you into <strong>every chat AND every project</strong>.</div></li><li><div class="li-text">Even when you're "just chatting," this is working.</div></li></ul>
+<p class="block"><em>"You run a bakery. You like short answers." “Your partner’s name is Dave.”</em></p></div></details>
+<details class="toggle th3" id="②-project-memory"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">② Project memory</h4></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">What Claude learns from the chats inside <strong>ONE</strong> project.</div></li><li><div class="li-text">It stays in that project. Your other projects never see it.</div></li><li><div class="li-text">Its local to YOU — And is not shared with the teams.</div></li></ul>
+<p class="block"><em>"We always like to see next week’s schedule in clear bullets, with the first day of the week starting on MONDAY, not SUNDAY.”</em></p></div></details>
+<details class="toggle th3" id="③-project-instructions-knowledge-your-files"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">③ Project instructions + knowledge (your files)</h4></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">The job description and the real documents <strong>YOU</strong> put in.</div></li><li><div class="li-text">Instructions load in every chat. Files get pulled in when a question needs them.</div></li><li><div class="li-text"><em>Brand guide, voice guide, SOPs.</em></div></li></ul></div></details></div></details>
+<details class="toggle th2" id="how-it-uses-the-memory"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">How it uses the memory…</h3></summary><div class="toggle-body"><figure class="image"><a href="assets/897d6150-37d95ba5e00d.webp" class="zoom"><img src="assets/897d6150-37d95ba5e00d.webp" width="1600" height="933" loading="lazy" decoding="async" alt="W1 memory mix"></a></figure></div></details></div></details>
+<hr>
+<details class="toggle th1" id="homework-pre-work"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">✅ Homework + pre-work</h2></summary><div class="toggle-body"><div class="callout plain"><div class="callout-icon">🔥</div><div class="callout-body"><p class="block "><strong>Next week is a BIG week.</strong></p>
+<p class="block">Your homework is the 25 Questions memory exercise</p>
+<p class="block">Your pre-work is getting your files ready for Marketing (Next Tuesday!)</p></div></div>
+<h4 class="h h3" id="homework-from-today">Homework From Today….</h4>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Watch all “Pre-Watch” videos &amp; download your tools.</div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/6070e129-4887-412e-b6b2-9ece74a0fabb" target="_blank" rel="noopener">Update your Memory with the 25 Questions (“AI Memory Keeper”)</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Download the “Business Brain” Starter Pack</div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Share your #Wins in Slack</div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Connect with your pod members and success advisors in Slack</div></div>
+<hr>
+<h4 class="h h3" id="pre-work-for-next-week-marketing">Pre-Work for Next Week: Marketing</h4>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text">Download the Business Brain Starter Pack (PLAYBOOK)</div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><strong>Pre-work:</strong> <a href="https://tubconnect.com/p/f36aff35-0c4b-4804-ab1c-ffe006e2e751?viewAs=program%3A16dea281-5a7d-4b8d-b15b-7231dc69985e" target="_blank" rel="noopener">create your Foundation &amp; Marketing context files with the knowledge file generators</a></div></div>
+<h4 class="h h3" id="coming-in-tonights-email-a-prompt-to-paste-into-calchat-and">🧠 <strong>Coming in tonight's email:</strong> a prompt to paste into CalChat and check your understanding.</h4></div></details>
+<hr>
+<details class="toggle th1" id="resources-from-this-week"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🔗 Resources from This Week</h2></summary><div class="toggle-body"><details class="toggle th2" id="tools"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Tools</h3></summary><div class="toggle-body"><div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://superhumanprompts.co/" target="_blank" rel="noopener">SuperHumanPrompts.co</a>: the prompt generator</div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="http://claude.ai/" target="_blank" rel="noopener">Claude</a>: where you build your skills and projects</div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://www.granola.ai/" target="_blank" rel="noopener">Granola</a>: meeting transcripts for your next build</div></div></div></details>
+<details class="toggle th2" id="go-deeper"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Go Deeper</h3></summary><div class="toggle-body"><p class="block"><strong>The basics of skills</strong></p>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/a23a4e91-f0cc-4825-9929-ba49ee3a93de" target="_blank" rel="noopener">🧰 Build Your Skills</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/78066f12-fb7c-4455-be57-3493812e46b9" target="_blank" rel="noopener">🔧 Update Your Skills</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/3e525a8f-004b-4039-a4ab-231520644a14" target="_blank" rel="noopener">📥 Uploading Skills to ChatGPT and Claude</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/10a15dc9-a2fc-429a-90e2-62efcff5d49a" target="_blank" rel="noopener">🤝 Get Your Best Skill to Your Whole Team in 15 Minutes</a></div></div>
+<p class="block"><strong>Pro-moves</strong></p>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/1bdd2997-de4f-4b4c-a53b-b06b5cdeeb50" target="_blank" rel="noopener">🥷 Build Claude Skills Like the Top 1%</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/b698fae3-b5b4-47cd-ba1f-421b0dd6752f" target="_blank" rel="noopener">✍️ Anti-AI Writing Rules: Teach Claude and ChatGPT to Write Like a Person</a></div></div>
+<p class="block"><strong>Privacy + memory</strong></p>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/58c569ce-28de-452b-a563-d369fdee0abe" target="_blank" rel="noopener">🔒 Claude &amp; ChatGPT Privacy: Turn Off Training and Chat Without Memory</a></div></div>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/36cdaa99-7448-4c45-9cbf-9305d7df4c43" target="_blank" rel="noopener">🏠 AI Information Recipe: Every fact has a home</a></div></div>
+<p class="block"><strong>Project prep</strong></p>
+<div class="todo"><span class="box" aria-hidden="true"></span><div class="todo-text"><a href="https://tubconnect.com/p/f36aff35-0c4b-4804-ab1c-ffe006e2e751" target="_blank" rel="noopener">🧠 Business Brain: Pre-work for Marketing Week</a></div></div></div></details>
+<details class="toggle th2" id="support-class-links"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Support + class links</h3></summary><div class="toggle-body"><ul class="list"><li><div class="li-text">TUB Connect: <span class="bg-orange">🚧 [LINK NEEDED: TUB Connect A2A F26 home]</span></div></li><li><div class="li-text">AI Glossary: <span class="bg-orange">🚧 [LINK NEEDED: AI Glossary artifact]</span></div></li><li><div class="li-text">Support: <a href="mailto:support@theuncommonbusiness.co" target="_blank" rel="noopener">support@theuncommonbusiness.co</a></div></li><li><div class="li-text">CalChat: <span class="bg-orange">🚧 [LINK NEEDED: Fall CalChat link, owner Megan]</span></div></li><li><div class="li-text">Session recording: <span class="bg-orange">🚧 [LINK NEEDED: Vimeo replay, after class]</span></div></li></ul></div></details></div></details>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<hr>
+<details class="toggle th1" id="demo-email-newsletter-generator"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">📧 Demo: Email Newsletter Generator</h2></summary><div class="toggle-body"><details class="toggle th3" id="the-situation-1"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">✔️ The situation</h4></summary><div class="toggle-body"><p class="block ">I spend hours every Friday writing my newsletter from scratch.</p>
+<p class="block">By the end of this build, Claude writes it for me, in my voice, in 10 minutes flat.</p></div></details>
+<details class="toggle th3" id="ask-the-question-have-we-done-this-before"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">🛑 Ask the question: Have we done this before?</h4></summary><div class="toggle-body"><p class="block"><strong>YES</strong>: we have plenty of examples of great newsletters! This is Path B.</p>
+<p class="block"><a class="mention" href="https://app.notion.com/p/3657d89544a281d5ba44e0fa43f5d788" target="_blank" rel="noopener">📬 Top 10 Newsletters by Open Rate — Last 6 Months</a></p>
+<p class="block">Run these steps in one chat, in order.</p></div></details>
+<details class="toggle th3" id="①-follow-the-blueprint-steps-from-above"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">① Follow the Blueprint steps from above</h4></summary><div class="toggle-body"><p class="block">Same steps as in "🎯 How do I tell AI what great looks like?" above, Path B, with the task = "write my email newsletter." Steps ② to ⑦ below walk you through them, prompt by prompt.</p></div></details>
+<details class="toggle th3" id="②-send-claude-to-your-top-newsletters"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">② Send Claude to your top newsletters</h4></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>I have past examples.
+
+These are my top 10 newsletters by open rate over the last 6 months. They're all written in my voice (Callan Faulkner).
+
+Go pull all of them. Read every one line by line. I need you to understand what makes my best work my best work.
+
+Don't analyze yet. Just read. Confirm when you're done.</code></pre></div>
+<p class="block">↓ <strong>Expect:</strong> Claude fetches all 10, reads each one, confirms it's ready.</p></div></details>
+<details class="toggle th3" id="③-find-and-study-an-email-newsletter-expert"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">③ Find and study an email newsletter expert</h4></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>ROLE: You are Eugene Schwartz, legendary copywriter who wrote 'Breakthrough Advertising' and generated over $2 billion in sales through mail-order copy. You've spent decades studying what makes people read, believe, and act on written words.
+
+Now be a forensic detective. Analyze my top 10 newsletters like a coroner with a grudge.
+
+Tell me with surgical specificity:
+- What's happening in the first 50 words of every winner?
+- What's the architecture they share?
+- Who are the named humans? When do they appear?
+- Where does the vulnerability land?
+- What's the pacing pattern?
+- What emotional beats do they hit that average newsletters miss?
+
+Write this like a master dissecting his own craft. Don't sugarcoat. The differences are the gold.</code></pre></div>
+<p class="block">↓ <strong>Expect:</strong> Claude writes the contrast analysis. Read it carefully, this is what's actually in your DNA.</p></div></details>
+<details class="toggle th3" id="④-get-the-full-forensic-report-on-why-your-best-emails-work"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">④ Get the full forensic report on why your best emails work: your Blueprint</h4></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Now build the complete reverse-engineering report. Six sections:
+
+1. THE HIDDEN ARCHITECTURE — the invisible structure these newsletters follow (emotional arc, information sequence, psychological triggers)
+
+2. THE RULES THAT MATTER — extract 7-10 non-obvious rules that separate these from average newsletters (specific patterns like "always open with a micro-story under 50 words" — not generic advice)
+
+3. THE SCOREBOARD — 5-7 specific metrics that predict newsletter success BEFORE sending (readability formula, emotional variety score, curiosity gap index, etc.)
+
+4. THE QUESTIONS FRAMEWORK — the 8-12 questions these newsletters consistently answer for readers (both explicit and implicit)
+
+5. THE FEELING FORMULA — map the emotional journey readers experience:
+   - Opening emotion
+   - Transformation points
+   - Closing sensation
+   - Lingering effect
+
+6. THE INTERVIEW TRANSFORMATION TEMPLATE — step-by-step process to convert any transcript into a newsletter that follows these patterns (how to mine for the core insight, story selection criteria, opening hook construction, value delivery sequence, CTA placement)
+
+Format everything as actionable templates and checklists I can use immediately. This report IS my Blueprint. 📕</code></pre></div>
+<p class="block">↓ <strong>Expect:</strong> Claude produces a 6-section forensic report.</p></div></details>
+<details class="toggle th3" id="⑤-add-callans-non-negotiables-the-forbidden-list"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">⑤ Add Callan's non-negotiables: The Forbidden List</h4></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Before we finalize the Blueprint, add my non-negotiable voice rules. These are absolute for every newsletter I'll ever write:
+
+ALWAYS:
+- Joy and love first — celebrate before the work begins
+- It's a spiritual lesson masked as a business lesson
+- Written at an eighth-grade reading level
+- Activate people to their highest potential
+- Permission-based stories only — never share private info without consent
+- The most valuable email they've received all month
+- They should almost feel like it's illegal to be getting this for free
+
+NEVER:
+- Sound like AI wrote it (this is the most important rule)
+- Use em dashes
+- Put the CTA in the body — only in the P.S.
+- Restate the subject line in the preview text
+- Pull language, scenes, or phrasing from past newsletters (every draft built fresh)
+
+This is ART, not math — keep all the rules AND load 3 of my top winners directly into the Blueprint as anchor examples.
+
+Update the Blueprint with these rules in the right sections.</code></pre></div>
+<p class="block">↓ <strong>Expect:</strong> Claude folds the rules into the Blueprint. Read it back. Make sure your fingerprint is on every section.</p></div></details>
+<details class="toggle th3" id="⑥-test-building-one-newsletter-from-a-real-transcript"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">⑥ Test building one newsletter from a real transcript</h4></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Don't build the skill yet.
+
+I'm going to give you ONE real transcript: [PASTE TRANSCRIPT]
+
+Before drafting, give me 3 different angles you could take this newsletter — the belief, the scene, and the takeaway each one would land on. Let me pick one before you write.
+
+Then use ONLY the Blueprint to write one perfect newsletter. By hand. No shortcuts.
+
+Follow every rule. Hit every never-do. Apply every pattern.
+
+Then I'll review what you produced.</code></pre></div>
+<p class="block">↓ <strong>Expect:</strong> Claude offers 3 angles. Pick one. Claude writes one newsletter. Read it like you're about to send it.</p></div></details>
+<details class="toggle th3" id="⑦-score-it-0100-and-tune-the-blueprint"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">⑦ Score it 0–100 and tune the Blueprint</h4></summary><div class="toggle-body"><details class="toggle" id="the-prompt"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>The prompt</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>Score this newsletter 0-100 against our Blueprint. Don't sugarcoat.
+
+Tell me:
+- The score
+- The single rule it broke worst
+- Exactly what to fix in the newsletter
+- Whether the BLUEPRINT is missing a rule that would have prevented this
+
+Then:
+1. Update the Blueprint with any new rules
+2. Rewrite the newsletter once with the fix applied</code></pre></div></div></details>
+<p class="block">↓ <strong>Loop this</strong> until the Blueprint reliably produces 90+ on real transcripts.</p></div></details>
+<details class="toggle th2" id="the-gate-90-on-three-real-inputs"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">The Gate: 90+ on three real inputs</h3></summary><div class="toggle-body"><p class="block empty">&nbsp;</p>
+<figure class="embed"><div class="embed-frame"><iframe src="https://theuncommonbusiness.github.io/a2a-f26-week-1-plus-ups/w1-gate-checker/embed.html" loading="lazy" title="Embedded tool" allow="clipboard-write"></iframe></div><figcaption><p class="block"><a href="https://theuncommonbusiness.github.io/a2a-f26-week-1-plus-ups/w1-gate-checker/" target="_blank" rel="noopener">Open the Gate Checker</a></p></figcaption></figure>
+<p class="block"><strong>🚦 Does it reliably produce greatness?</strong> Three real inputs, not test inputs.</p>
+<ul class="list"><li><div class="li-text">90+ on three real transcripts in a row → <strong>green light. Move to ⑧.</strong></div></li><li><div class="li-text">Still 70s and 80s → <strong>stay in ⑦.</strong> The Blueprint isn't ready.</div></li></ul></div></details>
+<details class="toggle th2" id="⑧-the-handoff-build-the-skill"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">⑧ The Handoff: build the skill</h3></summary><div class="toggle-body"><details class="toggle" id="the-prompt-1"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>The prompt</strong></span></summary><div class="toggle-body"><div class="code"><div class="code-bar"><span class="code-lang">Plain Text</span><button class="copy" type="button">Copy</button></div><pre><code>The system is working.
+
+Now turn it into a Claude skill called "email-newsletter-writer."
+
+Before you build, interview me with the most important questions — don't skip this. This is where the skill is made.
+
+Then ask me what to name the skill and give me greedy triggers — multiple phrases I might use to fire it, not just one. Greedy triggers = skill fires every time I need it.</code></pre></div></div></details>
+<p class="block">↓ <strong>Expect:</strong> Claude asks 8–10 high-impact questions. <strong>Answer every one.</strong></p></div></details>
+<details class="toggle th2" id="already-built-skills-heres-what-the-gate-changes"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">🧗 Already built skills? Here's what The Gate changes</h3></summary><div class="toggle-body"><details class="toggle th3" id="pick-the-skill-you-use-most"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">Pick the skill you use most.</h4></summary><div class="toggle-body"><p class="block">Pick the skill you use most. Write down what great looks like for it, run it on three real inputs, and score it.</p></div></details>
+<details class="toggle th3" id="if-it-clears-90-three-times-youve-got-a-contractor"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">If it clears 90 three times, you've got a Contractor.</h4></summary><div class="toggle-body"><p class="block">If it clears 90 three times, you've got a Contractor. If it doesn't, you just found what was missing.</p></div></details>
+<p class="block">Type the score your skill got in the chat. 90+ or "not yet" are both fine answers.</p></div></details></div></details>
+<hr>
+<details class="toggle th1" id="problem-this-email-newsletter-generator-is-missing-a-lot-of"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🚨 PROBLEM: This Email Newsletter Generator is missing a LOT Of context…</h2></summary><div class="toggle-body"><div class="callout plain c-green"><div class="callout-icon">➡️</div><div class="callout-body"><p class="block">Sometimes, skills work better inside of a workspace with a BRAIN loaded in</p></div></div>
+<figure class="image"><a href="assets/4047d895-c97e543b330f.webp" class="zoom"><img src="assets/4047d895-c97e543b330f.webp" width="1600" height="934" loading="lazy" decoding="async" alt=""></a></figure></div></details>
+<hr>
+<details class="toggle th1" id="bonus-project-meal-planner"><summary><span class="tri" aria-hidden="true"></span><h2 class="h h1">🏆 BONUS PROJECT: Meal Planner</h2></summary><div class="toggle-body"><details class="toggle th2" id="old-way"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">Old way</h3></summary><div class="toggle-body"><p class="block empty">&nbsp;</p></div></details>
+<details class="toggle th2" id="from-contractor-to-autonomous-step-by-step-1"><summary><span class="tri" aria-hidden="true"></span><h3 class="h h2">From Contractor to Autonomous (Step by Step)</h3></summary><div class="toggle-body"><p class="block empty">&nbsp;</p></div></details></div></details>
+<p class="block empty">&nbsp;</p>
+<p class="block empty">&nbsp;</p>
+<p class="block"><strong>🎯 Build your Blueprint.</strong> Start with one question: have you done this before, or is it brand new?</p>
+<figure class="embed"><div class="embed-frame"><iframe src="https://theuncommonbusiness.github.io/a2a-f26-week-1-plus-ups/w1-playbook-path-picker/embed.html" loading="lazy" title="Embedded tool" allow="clipboard-write"></iframe></div><figcaption><p class="block"><a href="https://theuncommonbusiness.github.io/a2a-f26-week-1-plus-ups/w1-playbook-path-picker/" target="_blank" rel="noopener">Open the Blueprint Path Picker</a></p></figcaption></figure>
+<p class="block">The Newsletter demo walks you through every step, prompt by prompt.</p>
+<details class="toggle th3" id="example-i-downloaded-a-skill-off-the-internet-and-claude-sco"><summary><span class="tri" aria-hidden="true"></span><h4 class="h h3">🚨 EXAMPLE: I downloaded a skill off the internet and Claude scored it 42/100</h4></summary><div class="toggle-body"><p class="block">I found a skill called <strong>ads-creative</strong>. Sounded perfect, since Meta Ads are a top lead source. But it has MAJOR issues.</p>
+<a class="file" href="assets/SKILL.md" download><span class="file-icon" aria-hidden="true">📎</span><span class="file-name">SKILL.md</span><span class="file-size">5.2KB</span></a>
+<details class="toggle" id="i-asked-claude-to-score-this-skill-0-100-on-how-useful-it-is"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>I asked Claude to score this skill 0-100 </strong>on how useful it is for our business…</span></summary><div class="toggle-body"><p class="block">Result: <u>42/100</u></p>
+<details class="toggle" id="the-chat-where-i-scored-it"><summary><span class="tri" aria-hidden="true"></span><span class="t-text"><strong>The chat where I scored it</strong></span></summary><div class="toggle-body"><p class="block">The chat where I scored it: <a href="https://claude.ai/chat/9a7207ba-ee86-43c8-af7b-56b9d2258835" target="_blank" rel="noopener">claude.ai chat, the 42/100 score</a> <span class="bg-orange">🚧 [SWAP: this chat is private. Use a share link or a screenshot.]</span></p></div></details></div></details></div></details>
+<figure class="image"><a href="assets/4067d895-df34c72bccb5.webp" class="zoom"><img src="assets/4067d895-df34c72bccb5.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></figure>
+  <footer class="foot">Backup copy of the TUB Connect class notes · Copied from Notion Oct 27, 2026 · The Uncommon Business</footer>
+</main>
+<div class="lightbox" id="lb" role="dialog" aria-label="Image preview"><img alt=""></div>
+<script>
+(function(){
+  var all=function(){return Array.prototype.slice.call(document.querySelectorAll('details'))};
+  var btn=document.getElementById('expand');
+  btn.addEventListener('click',function(){
+    var open=btn.textContent==='Expand all';
+    all().forEach(function(d){d.open=open});
+    btn.textContent=open?'Collapse all':'Expand all';
+  });
+  function openTo(el){for(var p=el;p;p=p.parentElement){if(p.tagName==='DETAILS')p.open=true}}
+  function goHash(){
+    if(!location.hash)return;
+    var el=document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if(el){openTo(el);setTimeout(function(){el.scrollIntoView({block:'start'})},0)}
+  }
+  window.addEventListener('hashchange',goHash);goHash();
+  window.addEventListener('beforeprint',function(){all().forEach(function(d){d.open=true})});
+  var tb=document.querySelector('.topbar');
+  window.addEventListener('scroll',function(){tb.classList.toggle('scrolled',window.scrollY>4)},{passive:true});
+  function copyText(t){
+    if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t);
+    return new Promise(function(res,rej){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');res()}catch(e){rej(e)}document.body.removeChild(a)});
+  }
+  document.addEventListener('click',function(e){
+    var c=e.target.closest('.copy');
+    if(c){
+      var code=c.closest('.code').querySelector('code').textContent;
+      copyText(code).then(function(){c.textContent='Copied!';c.classList.add('done');setTimeout(function(){c.textContent='Copy';c.classList.remove('done')},1600)});
+      return;
+    }
+    var z=e.target.closest('a.zoom');
+    if(z&&!e.metaKey&&!e.ctrlKey){e.preventDefault();var lb=document.getElementById('lb');lb.querySelector('img').src=z.getAttribute('href');lb.classList.add('on');return}
+    if(e.target.closest('#lb')){document.getElementById('lb').classList.remove('on')}
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').classList.remove('on')});
+})();
+</script>
+</body>
+</html>
